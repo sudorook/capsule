@@ -1,0 +1,43 @@
+<style>
+#nav-toggle-state {
+  display: none;
+}
+
+#nav-toggle-state:checked ~ .nav-menu {
+  display: block;
+}
+</style>
+
+<nav class="nav has-shadow">
+  <div class="container">
+
+    <div class="nav-left">
+      <a class="nav-item is-brand" href="/">
+        <figure class="image">
+          <img src="/img/favicon.ico">
+	</figure>
+        <div class="title is-4">&nbsp;website</div>
+      </a>
+    </div>
+
+    <!-- Using a <label /> here -->
+    <label class="nav-toggle" for="nav-toggle-state">
+      <span></span>           <!-- ^^^^^^^^^^^^^^^^ -->
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- This checkbox is hidden -->
+    <input type="checkbox" id="nav-toggle-state" />
+    
+    <div class="nav-right nav-menu">
+      <a class="nav-item is-tab" href="#">
+        Code
+      </a>
+      <a class="nav-item is-tab" href="#">
+	Posts
+      </a>
+    </div>
+
+  </div>
+</nav>
