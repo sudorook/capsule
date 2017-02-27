@@ -1,0 +1,12 @@
+name = "capsule"
+license = "GPL-2.0"
+licenselink = "https://github.com/pseudorook/capsule/blob/master/LICENSE"
+description = "A CSS-only theme for Hugo using Bulma and Font-Awesome"
+homepage = ""
+tags = []
+features = []
+min_version = 0.18
+
+[author]
+  name = "pseudorook"
+  homepage = ""
