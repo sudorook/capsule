@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+
+  {{ partial "head.html" . }}
+
+  <body style="min-height:100vh;display:flex;flex-direction:column"> 
+
+    {{ partial "navbar.html" . }}
+    
+    <section class="section" style="flex:1">
+      
+      <!-- Content -->
+      <div class="container">
+        {{ range (.Paginate (where .Data.Pages "Type" "post")).Pages }}
+        <article class="media">
+          <div class="media-content">
+
+            <div class="columns is-mobile">
+              <div class="column">
+                <p class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+                <p class="subtitle">{{ .Date.Format "Jan 2, 2006" }}</p>
+              </div>
+              
+              <div class="column is-narrow">
+                {{ .ReadingTime }} min.
+              </div>
+            </div>
+
+            <p>{{ .Summary }}</p>
+
+            <!-- <nav class="level is-mobile"> -->
+            <!--   <div class="level-right"> -->
+            <!--     <div class="level-item"> -->
+            <!--       {{ .ReadingTime }} min. -->
+            <!--     </div> -->
+            <!--   </div> -->
+            <!--   <div class="level-left"> -->
+            <!--     <div class="level-item"> -->
+            <!--       <a href="{{ .Permalink }}" class="button is-primary"> -->
+            <!--         Continue -->
+            <!--       </a> -->
+            <!--     </div> -->
+            <!--   </div> -->
+            <!-- </nav> -->
+
+          </div>
+        </article>
+        {{ end }}
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <!-- Pagination -->
+      {{ partial "pagination.html" . }}
+
+    </section>
+
+    {{ partial "footer.html" . }}
+
+  </body>
+
+</html>
