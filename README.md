@@ -13,23 +13,7 @@ git submodule add https://github.com/pseudorook/capsule themes/capsule
 ```
 
 You can then either build Hugo on the command line and pass the `-t capsule`
-flag, or you can add `theme = "capsule"` to your config.toml file. 
-
-
-# Build
-
-To (re)build the CSS, you need to have npm and gulp installed. Clone the
-capsule repository and once in it run:
-
-```
-npm install
-```
-
-and then
-
-```
-gulp
-```
+flag, or you can add `theme = "capsule"` to your config.toml file.
 
 
 ## Notes: 
@@ -43,7 +27,7 @@ pygmentsstyle = "<style>"
 
 For dark highlighter themes, you should rebuild capsule css with
 `build/extra/syntax.sass`. Uncomment it from the capsule.sass file and run
-`gulp`. 
+`gulp`.
 
 Without that file, the background color will default to Bulma's light
 background-color, and colored elements from dark themes will be hard to read
@@ -66,4 +50,25 @@ SectionPagesMenu = "main"
 
 With this set, capsule with automatically generate a navigation menu in the
 navbar based on all the sections (the directories inside the content/
-directory) present in your site. 
+directory) present in your site.
+
+
+# Build
+
+To (re)build the CSS, you need to have npm and gulp installed. Clone the
+capsule repository and once in it run:
+
+```
+npm install
+```
+
+and then
+
+```
+gulp
+```
+
+You can enable/disable sass components in /build/sass/capsule.sass. To use
+customized versions of capsule, you can maintain a fork repo and set the theme
+submodule to your fork, or you can simply make a symlink in the themes/ folder
+of your site to your local repo.
