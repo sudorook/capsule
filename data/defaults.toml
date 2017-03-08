@@ -1,3 +1,5 @@
 [icons]
   favicon = "/img/favicon.ico"
   appleicon = "/img/apple-touch-icon.png"
+  logo = "/img/logo.svg"
+  banner = "/img/banner.svg"
