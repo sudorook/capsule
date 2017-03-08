@@ -1,9 +1,63 @@
 <footer class="footer">
   <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        This is a footer.
-      </p>
-    </div>
+    <nav class="level">
+      {{ $node := . }}
+      {{ range .Site.Menus.main }}
+      <div class="level-item has-text-centered">
+        <a href="{{ .URL }}" class="heading is-large">
+          <span class="header">{{ .Name }}</span>
+        </a>
+      </div>
+      {{ end }}
+
+      <!-- {{ range $section, $page := .Site.Sections }} -->
+      <!-- <div class="level-item has-text-centered"> -->
+      <!--   <a href="{{ $section }}" class="is-outlined"> -->
+      <!--     <span class="header">{{ title $section }}</span> -->
+      <!--   </a> -->
+      <!-- </div> -->
+      <!-- {{ end }} -->
+
+    </nav>
+
+    <nav class="level">
+
+      <div class="level-left has-text-centered">
+        <div class="level-item">
+          <form class="control has-icon has-icon-right" method="get"
+                action="https://duckduckgo.com">
+            <input class="input" type="text" name="q" maxlength="255"
+                   placeholder="Search">
+            <input class="input" type="hidden" name="sites" value="{{ .Site.BaseURL }}">
+            <input class="input" type="hidden" name="kj" value="#00d1b2">
+            <span class="icon is-small"><i class="fa fa-search"></i></span>
+          </form>
+        </div>
+      </div>
+
+      <div class="level-right has-text-centered">
+        <div class="level-item">
+
+          <a class="button" href="{{ .Site.BaseURL }}">
+            <span class="icon"><i class="fa fa-home"></i></span>
+          </a>
+          &nbsp;
+
+          <!-- It's not the most robust way of generating links... -->
+          {{ range $key, $value := .Site.Social }}
+          <a class="button" href="https://{{ $key }}.com/{{ $value }}">
+            <span class="icon"><i class="fa fa-{{ $key }}"></i></span>
+          </a>
+          &nbsp;
+          {{ end }}
+
+          <a class="button" href="{{ .Site.RSSLink }}">
+            <span class="icon"><i class="fa fa-rss"></i></span>
+          </a>
+
+        </div>
+      </div>
+
+    </nav>
   </div>
 </footer>
