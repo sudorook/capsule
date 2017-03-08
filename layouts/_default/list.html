@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+
+  {{ partial "head.html" . }}
+
+  <body style="min-height:100vh;display:flex;flex-direction:column">
+
+    {{ partial "navbar.html" . }}
+
+    <section class="section" style="flex:1">
+
+      <!-- Content -->
+      <div class="container" style="min-height:56vh">
+      {{ range .Paginator.Pages }}
+        {{ .Render "summary" }}
+      {{ end }}
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      <!-- Pagination -->
+      {{ partial "pagination-list.html" . }}
+
+    </section>
+
+    {{ partial "footer.html" . }}
+
+  </body>
+
+</html>
