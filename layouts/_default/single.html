@@ -7,13 +7,22 @@
 
     {{ partial "navbar.html" . }}
 
-    <div style="flex:1">
-      <section class="section">
-        <div class="container">
-          {{ .Content }}
-        </div>
-      </section>
-    </div>
+    <section class="section" style="flex:1">
+
+      <!-- Content -->
+      <div class="container" style="min-height:56vh">
+        <p class="title">{{ .Title }}</p>
+        <p class="subtitle">{{ .Date.Format "Jan 2, 2006" }}</p>
+        {{ .Content }}
+      </div>
+
+      <br>
+      <br>
+      <br>
+
+      {{ partial "pagination-single.html" . }}
+
+    </section>
 
     {{ partial "footer.html" . }}
   </body>
