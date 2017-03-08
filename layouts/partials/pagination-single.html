@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="level">
+
+    <div class="level-left">
+      <div class="level-item">
+        <p class="control has-addons">
+          {{ if .NextInSection }}
+          <a class="button" href="{{ .NextInSection.Permalink }}">
+            <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
+            <span class="is-hidden-touch is-hidden-desktop-only">
+              {{ .NextInSection.Title | truncate 100 "..." }}
+            </span>
+            <span class="is-hidden-touch is-hidden-widescreen">
+              {{ .NextInSection.Title | truncate 75 "..." }}
+            </span>
+            <span class="is-hidden-mobile is-hidden-desktop">
+              {{ .NextInSection.Title | truncate 50 "..." }}
+            </span>
+            <span class="is-hidden-tablet">
+              {{ .NextInSection.Title | truncate 40 "..." }}
+            </span>
+          </a>
+          {{ else }}
+          <a class="button is-disabled" href="#">
+            <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
+            <span>Newest</span>
+          </a>
+          {{ end }}
+        </p>
+      </div>
+    </div>
+
+    <div class="level-right">
+      <div class="level-item">
+        <p class="control has-addons">
+          {{ if .PrevInSection }}
+          <a class="button" href="{{ .PrevInSection.Permalink }}">
+            <span class="is-hidden-touch is-hidden-desktop-only">
+              {{ .PrevInSection.Title | truncate 100 "..." }}
+            </span>
+            <span class="is-hidden-touch is-hidden-widescreen">
+              {{ .PrevInSection.Title | truncate 75 "..." }}
+            </span>
+            <span class="is-hidden-mobile is-hidden-desktop">
+              {{ .PrevInSection.Title | truncate 50 "..." }}
+            </span>
+            <span class="is-hidden-tablet">
+              {{ .PrevInSection.Title | truncate 40 "..." }}
+            </span>
+            <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+          </a>
+          {{ else }}
+          <a class="button is-disabled" href="#">
+            <span>Oldest</span>
+            <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+          </a>
+          {{ end }}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
