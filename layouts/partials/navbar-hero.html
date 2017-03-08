@@ -1,0 +1,73 @@
+<section class="hero is-primary is-medium">
+
+  <!-- Hero header: will stick at the top -->
+  <div class="hero-head">
+
+    <nav class="nav has-shadow">
+      <div class="container">
+
+        <div class="nav-left">
+          <a class="nav-item is-brand" href="/">
+            <div class="title is-4">&nbsp;{{ .Site.Title }}</div>
+          </a>
+        </div>
+
+        <!-- Using a <label /> here -->
+        <label class="nav-toggle" for="nav-toggle-state">
+          <span></span>           <!-- ^^^^^^^^^^^^^^^^ -->
+          <span></span>
+          <span></span>
+        </label>
+
+        <!-- This checkbox is hidden -->
+        <input type="checkbox" id="nav-toggle-state"/>
+
+        <div class="nav-right nav-menu">
+          {{ $node := . }}
+          {{ range .Site.Menus.main }}
+          <a href="{{ .URL }}"
+             class="nav-item is-tab
+                    {{ if or ($node.IsMenuCurrent "main" .) ($node.HasMenuCurrent "main" .) }}
+                      is-active
+                    {{ end }}">{{ .Name }}
+          </a>
+          {{ end }}
+        </div>
+
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body" 
+       style="background-image:url({{ .Site.Data.defaults.icons.banner }})">
+    <div class="container has-text-centered">
+      <!-- <figure class="image"> -->
+      <!--   <img src="{{ .Site.Data.defaults.icons.logo }}"> -->
+      <!-- </figure> -->
+      <h1 class="title">
+        {{ .Title }}
+      </h1>
+      <h2 class="subtitle">
+        {{ .Description }}
+      </h2>
+    </div>
+  </div>
+
+  <!-- [> Hero footer: will stick at the bottom <] -->
+  <!-- <div class="hero-foot"> -->
+  <!--   <nav class="tabs"> -->
+  <!--     <div class="container"> -->
+  <!--       <ul> -->
+  <!--         <li class="is-active"><a>Overview</a></li> -->
+  <!--         <li><a>Modifiers</a></li> -->
+  <!--         <li><a>Grid</a></li> -->
+  <!--         <li><a>Elements</a></li> -->
+  <!--         <li><a>Components</a></li> -->
+  <!--         <li><a>Layout</a></li> -->
+  <!--       </ul> -->
+  <!--     </div> -->
+  <!--   </nav> -->
+  <!-- </div> -->
+</section>
