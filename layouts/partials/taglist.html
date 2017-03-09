@@ -1,21 +1,13 @@
-{{ if .Params.categories }}
-<p>
-  Categories:
-  {{ range .Params.categories }}
-  <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
-    <span class="tag">{{ . }}</span>
-  </a>
+{{ range $name, $taxonomy := .Site.Taxonomies }}
+  {{ range $key, $value := $.Params }}
+  {{ if eq $key $name }}
+  <p>{{ $name | humanize | title }}:
+    {{ range $item := $value }}
+    <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $item) | urlize | lower }}">
+      <span class="tag">{{ $item | humanize | title }}</span>
+    </a>
+    {{ end }}
+  </p>
   {{ end }}
-</p>
-{{ end }}
-
-{{ if .Params.tags }}
-<p>
-  Tags:
-  {{ range .Params.tags }}
-  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-    <span class="tag">{{ . }}</span>
-  </a>
   {{ end }}
-</p>
 {{ end }}
