@@ -1,0 +1,30 @@
+{{ $this_link := .Permalink }}
+{{ $this_tags := .Params.tags }}
+{{ $.Scratch.Set "page_count" 0 }}
+{{ range .Site.Pages }}
+  {{ $page := . }}
+  {{ $.Scratch.Set "has_related" false }}
+  {{ $has_common_tags := intersect $this_tags .Params.tags | len | lt 0 }}
+
+  {{ if and $has_common_tags (ne $this_link $page.Permalink) }}
+    {{ $.Scratch.Set "has_related" true }}
+  {{ end }}
+
+  {{ if $.Scratch.Get "has_related" }}
+    {{ if eq ($.Scratch.Get "page_count") 0 }}
+      {{ $.Scratch.Add "page_count" 1 }}
+<nav class="panel">
+  <p class="panel-heading">Related</p>
+    {{ end }}
+    {{ if lt ($.Scratch.Get "page_count") 5 }}
+  <a class="panel-block" href="{{ $page.Permalink }}">
+    <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+    <span>{{ $page.Title }}</span>
+  </a>
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if gt ($.Scratch.Get "page_count") 0 }}
+</nav>
+{{ end }}
