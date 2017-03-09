@@ -7,7 +7,7 @@
     <li>
       <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $key) | urlize | lower }}">
         <span>{{ $key | humanize | title }}</span>
-        <span class="tag is-small">{{ len $value }}</span>
+        <span class="tag">{{ len $value }}</span>
       </a>
     </li>
     {{ end }}
