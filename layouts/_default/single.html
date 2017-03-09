@@ -14,7 +14,8 @@
         <p class="title">{{ .Title }}</p>
         <p class="subtitle">{{ .Date.Format "Jan 2, 2006" }}</p>
         {{ .Content }}
-
+        <br>
+        {{ partial "git-info.html" . }}
         <br>
         {{ partial "taglist.html" . }}
       </div>
