@@ -1,12 +1,12 @@
 <div class="container">
   <nav class="pagination">
-    {{ if .Paginator.HasPrev }} 
+    {{ if .Paginator.HasPrev }}
     <a href="{{ .Paginator.Prev.URL}}" class="pagination-previous">Previous</a>
     {{ else }}
     <a class="pagination-previous is-disabled">Previous</a>
     {{ end }}
 
-    {{ if .Paginator.HasNext }} 
+    {{ if .Paginator.HasNext }}
     <a href="{{ .Paginator.Next.URL}}" class="pagination-next">Next</a>
     {{ else }}
     <a class="pagination-next is-disabled">Next</a>
@@ -37,7 +37,7 @@
       <li><a href="{{ .Paginator.URL }}" class="pagination-link is-current">
         {{ .Paginator.PageNumber }}
       </a></li>
-      
+
     {{ if .Paginator.HasNext }}
       {{ if eq .Paginator.Next.PageNumber .Paginator.Last.PageNumber }}
       <li><a href="{{ .Paginator.Next.URL }}" class="pagination-link">
