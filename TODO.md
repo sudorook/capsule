@@ -1,4 +1,4 @@
-1. Make a partial that lists associated categories and tags for a given page.
+1. Add a panel/box with related links for each single page.
 
 2. Add shortcodes for responsive:
     - images
