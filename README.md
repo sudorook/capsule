@@ -34,7 +34,7 @@ background-color, and colored elements from dark themes will be hard to read
 against it.
 
 
-### 2. Unused classes in Bulma. 
+### 2. Unused classes in Bulma
 
 Capsule is set to only compile the classes it needs. To enable more Bulma
 classes, uncomment the relevant sass files in `build/bulma/bulma.sass`.
@@ -51,6 +51,25 @@ SectionPagesMenu = "main"
 With this set, capsule with automatically generate a navigation menu in the
 navbar based on all the sections (the directories inside the content/
 directory) present in your site.
+
+
+### 4. Add git metadata to your pages
+
+If you host your site on a public git vc server, you can set capsule to build a
+"Last edited on ..." note to each page that uses git metadata to display the
+date of the last commit and add a link to its blob on your public repo. 
+
+In your config.toml file, set:
+```
+enableGitInfo = true
+
+[params]
+  repo = "https://github.com/<user>/<repo>
+
+```
+
+The `repo` variable should point to the url of your repo for your website. The
+above example uses GitHub, but GitLab works as well. 
 
 
 # Build
