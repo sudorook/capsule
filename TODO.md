@@ -1,4 +1,5 @@
 1. Add shortcodes for responsive:
+    - blockquotes (keep markdown whitespace)
     - images
     - banners
     - videos (iframes)
