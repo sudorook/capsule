@@ -19,7 +19,12 @@
     {{ if lt ($.Scratch.Get "page_count") 5 }}
   <a class="panel-block" href="{{ $page.Permalink }}">
     <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
-    <span>{{ $page.Title }}</span>
+    <span>&nbsp;</span>
+    <span>{{ $page.Title }}&nbsp;
+    {{ range $tag := (intersect $this_tags .Params.tags) }}
+    <div class="tag">{{ $tag | humanize | title }}</div>
+    {{ end }}
+    </span>
   </a>
     {{ end }}
   {{ end }}
