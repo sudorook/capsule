@@ -1,0 +1,21 @@
+{{ if .Params.categories }}
+<p>
+  Categories:
+  {{ range .Params.categories }}
+  <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
+    <span class="tag">{{ . }}</span>
+  </a>
+  {{ end }}
+</p>
+{{ end }}
+
+{{ if .Params.tags }}
+<p>
+  Tags:
+  {{ range .Params.tags }}
+  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+    <span class="tag">{{ . }}</span>
+  </a>
+  {{ end }}
+</p>
+{{ end }}
