@@ -69,7 +69,8 @@ enableGitInfo = true
 ```
 
 The `repo` variable should point to the url of your repo for your website. The
-above example uses GitHub, but GitLab works as well. 
+above example uses GitHub, but GitLab and any other site that follows the
+format of `<siteurl>/<user>/<repo>/commit/<hash>` will work, too. 
 
 
 # Build
