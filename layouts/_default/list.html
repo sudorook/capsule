@@ -12,9 +12,9 @@
       <!-- Content -->
       <div class="container" style="min-height:56vh">
         {{ if .Data.Singular }}
-        <p class="title">{{ .Data.Singular | humanize | title }}: {{ .Title }}</p>
+        <p class="title">{{ .Data.Singular | title }}: {{ .Title }}</p>
         {{ else }}
-        <p class="title">{{ .Kind | humanize | title }}: {{ .Title | humanize | title }}</p>
+        <p class="title">{{ .Kind | title }}: {{ .Title }}</p>
         {{ end }}
 
         {{ range .Paginator.Pages }}
