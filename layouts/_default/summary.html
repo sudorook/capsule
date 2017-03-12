@@ -1,33 +1,13 @@
 <article class="media">
   <div class="media-content">
 
-    <div class="columns is-mobile">
-      <div class="column">
-        <p class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-        <p class="subtitle">{{ .Date.Format "Jan 2, 2006" }}</p>
-      </div>
-
-      <div class="column is-narrow">
-        {{ .ReadingTime }} min.
-      </div>
-    </div>
+    <p class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+    <p class="subtitle is-flex" style="justify-content:space-between">
+      <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+      <span>{{ .ReadingTime }} min.</span>
+    </p>
 
     <p>{{ .Summary }}</p>
-
-    <!-- <nav class="level is-mobile"> -->
-    <!--   <div class="level-right"> -->
-    <!--     <div class="level-item"> -->
-    <!--       {{ .ReadingTime }} min. -->
-    <!--     </div> -->
-    <!--   </div> -->
-    <!--   <div class="level-left"> -->
-    <!--     <div class="level-item"> -->
-    <!--       <a href="{{ .Permalink }}" class="button is-primary"> -->
-    <!--         Continue -->
-    <!--       </a> -->
-    <!--     </div> -->
-    <!--   </div> -->
-    <!-- </nav> -->
 
   </div>
 </article>
