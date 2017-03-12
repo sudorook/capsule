@@ -9,20 +9,6 @@
 
     <p>{{ .Summary }}</p>
 
-    <!-- Check the page if it uses any site-wide taxonomy terms. If so, then
-       - insert a line break betweek the .Summary and the taglist partial -->
-    {{ $.Scratch.Set "has_taxa" false }}
-    {{ range $name, $taxonomy := .Site.Taxonomies }}
-      {{ range $key, $value := $.Params }}
-        {{ if eq $key $name }}
-          {{ $.Scratch.Set "has_taxa" true }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-    {{ if $.Scratch.Get "has_taxa" }}
-    <br>
-    {{ end }}
-
     {{ partial "taglist.html" . }}
 
   </div>
