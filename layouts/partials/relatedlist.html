@@ -13,23 +13,25 @@
   {{ if $.Scratch.Get "has_related" }}
     {{ if eq ($.Scratch.Get "page_count") 0 }}
       {{ $.Scratch.Add "page_count" 1 }}
-<nav class="panel">
-  <p class="panel-heading">Related</p>
+<div class="container">
+  <nav class="panel">
+    <p class="panel-heading">Related</p>
     {{ end }}
     {{ if lt ($.Scratch.Get "page_count") 5 }}
-  <a class="panel-block" href="{{ $page.Permalink }}">
-    <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
-    <span>&nbsp;</span>
-    <span>{{ $page.Title }}&nbsp;
-    {{ range $tag := (intersect $this_tags .Params.tags) }}
-    <div class="tag">{{ $tag | humanize | title }}</div>
-    {{ end }}
-    </span>
-  </a>
+    <a class="panel-block" href="{{ $page.Permalink }}">
+      <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+      <span>&nbsp;</span>
+      <span>{{ $page.Title }}&nbsp;
+      {{ range $tag := (intersect $this_tags .Params.tags) }}
+      <div class="tag">{{ $tag | humanize | title }}</div>
+      {{ end }}
+      </span>
+    </a>
     {{ end }}
   {{ end }}
 {{ end }}
 
 {{ if gt ($.Scratch.Get "page_count") 0 }}
-</nav>
+  </nav>
+</div>
 {{ end }}
