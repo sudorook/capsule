@@ -1,7 +1,7 @@
 {{ if and .GitInfo (.Site.Params.repo) }}
 <br>
 <p class="heading">
-  Last edited: 
+  Last edited:
   <a href="{{ .Site.Params.repo }}/commit/{{ .GitInfo.Hash }}">
     {{ .GitInfo.AuthorDate.Format "Jan 2, 2006"  }}
   </a>
