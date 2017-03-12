@@ -3,11 +3,13 @@
   {{ if eq $key $name }}
   <p class="is-flex">
     <span class="heading">{{ $name | humanize | title }}:</span>
-    {{ range $item := $value }}
-    <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $item) | urlize | lower }}">
-      <span class="tag">{{ $item | humanize | title }}</span>
-    </a>
-    {{ end }}
+    <span>
+      {{ range $item := $value }}
+      <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $item) | urlize | lower }}">
+        <span class="tag">{{ $item | humanize | title }}</span>
+      </a>
+      {{ end }}
+    </span>
   </p>
   {{ end }}
   {{ end }}
