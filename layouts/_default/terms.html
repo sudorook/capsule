@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+
+  {{ partial "head.html" . }}
+
+  <body style="min-height:100vh;display:flex;flex-direction:column">
+
+    {{ partial "navbar.html" . }}
+
+    <section class="section" style="flex:1">
+
+      <!-- Content -->
+      <div class="container" style="min-height:56vh">
+        <p class="title">List of {{ .Title }}</p>
+        <ul>
+        {{ $data := .Data }}
+        {{ range $key, $value := .Data.Terms.ByCount }}
+          <li class="title is-4 is-flex" style="justify-content:space-between">
+            <span>
+              <a href="{{ urlize "/" }}{{ $data.Plural }}/{{ $value.Name | urlize }}">
+                {{ $value.Name }}
+              </a> 
+            </span>
+            <span>
+              {{ $value.Count }} posts
+            </span>
+          </li>
+        {{ end }}
+        </ul>
+      </div>
+
+    </section>
+
+    {{ partial "footer.html" . }}
+
+  </body>
+
+</html>
