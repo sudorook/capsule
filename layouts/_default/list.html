@@ -11,9 +11,15 @@
 
       <!-- Content -->
       <div class="container" style="min-height:56vh">
-      {{ range .Paginator.Pages }}
-        {{ .Render "summary" }}
-      {{ end }}
+        {{ if .Data.Singular }}
+        <p class="title">{{ .Data.Singular | humanize | title }}: {{ .Title }}</p>
+        {{ else }}
+        <p class="title">{{ .Kind | humanize | title }}: {{ .Title }}</p>
+        {{ end }}
+
+        {{ range .Paginator.Pages }}
+          {{ .Render "summary" }}
+        {{ end }}
       </div>
 
       <br>
