@@ -14,7 +14,7 @@
         {{ if .Data.Singular }}
         <p class="title">{{ .Data.Singular | humanize | title }}: {{ .Title }}</p>
         {{ else }}
-        <p class="title">{{ .Kind | humanize | title }}: {{ .Title }}</p>
+        <p class="title">{{ .Kind | humanize | title }}: {{ .Title | humanize | title }}</p>
         {{ end }}
 
         {{ range .Paginator.Pages }}
