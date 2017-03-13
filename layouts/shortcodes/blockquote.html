@@ -1,26 +1,41 @@
 <div class="content">
   <blockquote>
+
     <p>
       {{ $space := "&nbsp;&nbsp;&nbsp;&nbsp;" }}
       {{ .Inner | replaceRE "(\t)" $space | replaceRE "( ){4}" $space | markdownify }}
     </p>
+
+    {{ if or (.Get "author") (or (.Get "source") (.Get "date")) }}
     <footer class="is-flex">
-      <span>&mdash;&nbsp;</span>
+      {{ if .Get "author" }}
+      <span class="title is-5">&mdash;&nbsp;</span>
       <span>
-      {{ with .Get "author" }}
-        <p class="title is-5">{{.}}</p>
-      {{ end }}
-      {{ if and (.Get "source") (.Get "date") }}
+        <p class="title is-5">{{ .Get "author" }}</p>
         <p class="subtitle is-6">
+        {{ if and (.Get "source") (.Get "date") }}
           {{ .Get "source" }}, {{ .Get "date" }}
+        {{ else }}
+          {{ with .Get "source" }}{{.}}{{ end }}
+          {{ with .Get "date" }}{{.}}{{ end }}
+        {{ end }}
         </p>
-      {{ else }}
-        <p class="subtitle is-6">
-        {{ with .Get "source" }}{{.}}{{ end }}
-        {{ with .Get "date" }}{{.}}{{ end }}
-        </p>
-      {{ end }}
       </span>
+      {{ else if and (.Get "source") (.Get "date") }}
+      <span class="title is-5">&mdash;&nbsp;</span>
+      <span class="title is-5">{{ .Get "source" }}, {{ .Get "date" }}</span>
+      {{ else }}
+        {{ with .Get "source" }}
+        <span class="title is-5">&mdash;&nbsp;</span>
+        <span class="title is-5">{{.}}</span>
+        {{ end }}
+        {{ with .Get "date" }}
+        <span class="title is-5">&mdash;&nbsp;</span>
+        <span class="title is-5">{{.}}</span>
+        {{ end }}
+      {{ end }}
     </footer>
+    {{ end }}
+
   </blockquote>
 </div>
