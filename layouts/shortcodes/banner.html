@@ -1,0 +1,15 @@
+<section class="hero {{ with .Get "class" }}{{.}}{{ end }}">
+
+  <div class="hero-body"
+       style="background:url({{ with .Get "img" }}{{.}}{{ end }}) center;
+              {{ if eq (.Get "mode") "stretch" }}background-size: cover;
+              {{ else if eq (.Get "mode") "repeat" }}background-size: auto 100%;
+              {{ end }}">
+    <div class="container has-text-centered">
+      {{ with .Get "title" }}<p class="title">{{.}}</p>{{ end }}
+      {{ with .Get "subtitle" }}<p class="subtitle">{{.}}</p>{{ end }}
+      {{ with .Inner }}<p>{{.}}</p>{{ end }}
+    </div>
+  </div>
+
+</section>
