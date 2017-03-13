@@ -1,0 +1,27 @@
+{{ with .Get "class" }}
+{{ $.Scratch.Set "class" . }}
+{{ else }}
+{{ $.Scratch.Set "class" "" }}
+{{ end }}
+
+<div class="message {{ $.Scratch.Get "class" }}">
+  {{ with .Get "title" }}
+  <div class="message-header">
+    {{ . }}
+    <span class="icon is-small">
+    {{ if eq ($.Scratch.Get "class") "is-danger" }}
+      <i class="fa fa-exclamation-circle"></i>
+    {{ else if eq ($.Scratch.Get "class") "is-warning" }}
+      <i class="fa fa-warning"></i>
+    {{ else if eq ($.Scratch.Get "class") "is-info" }}
+      <i class="fa fa-info-circle"></i>
+    {{ else if eq ($.Scratch.Get "class") "is-success" }}
+      <i class="fa fa-check-square"></i>
+    {{ end }}
+    </span>
+  </div>
+  {{ end }}
+  <div class="message-body">
+    {{ .Inner }}
+  </div>
+</div>
