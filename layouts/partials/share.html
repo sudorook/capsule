@@ -1,0 +1,71 @@
+<div class="container">
+  <p class="control is-grouped">
+
+    <!-- Facebook -->
+    <a class="button"
+       href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}">
+      <span class="icon"><i class="fa fa-facebook"></i></span>
+    </a>
+
+    <!-- Twitter -->
+    <a class="button"
+       href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}{{ with .Site.Social.twitter}}&via=@{{.}}{{ end }}">
+      <span class="icon"><i class="fa fa-twitter"></i></span>
+    </a>
+
+    <!-- Pinterest -->
+    <a class="button"
+       href="https://pinterest.com/pin/create/bookmarklet/?media={{ with .Params.image }}{{.}}{{ else }}{{ .Site.Data.defaults.icons.logo }}{{ end }}&url={{ .Permalink }}&description={{ .Title }}">
+      <span class="icon"><i class="fa fa-pinterest"></i></span>
+    </a>
+
+    <!-- Tumblr -->
+    <a class="button"
+       href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ .Permalink }}&title={{ .Title }}&caption={{ with .Params.description }}{{.}}{{ end }}">
+      <span class="icon"><i class="fa fa-tumblr"></i></span>
+    </a>
+
+    <!-- Whatsapp -->
+    <a class="button"
+       href="whatsapp://send?text={{ .Permalink }}">
+      <span class="icon"><i class="fa fa-whatsapp"></i></span>
+    </a>
+
+    <!-- Skype -->
+    <a class="button"
+       href="https://web.skype.com/share?url={{ .Permalink }}">
+      <span class="icon"><i class="fa fa-skype"></i></span>
+    </a>
+
+    <!-- Viber -->
+    <!-- <a class="button" -->
+    <!--    href="viber://forward?text={{ .Permalink }}"> -->
+    <!--   <span class="icon"><i class="fa fa-viber"></i></span> -->
+    <!-- </a> -->
+
+    <!-- Google+ -->
+    <a class="button"
+       href="https://plus.google.com/share?url={{ .Permalink }}">
+      <span class="icon"><i class="fa fa-google-plus"></i></span>
+    </a>
+
+    <!-- Blogger -->
+    <!-- <a class="button" -->
+    <!--    href="https://www.blogger.com/blog-this.g?u={{ .Permalink }}&n={{ .Title }}&t={{ with .Params.description }}{{.}}{{ end }}"> -->
+    <!--   <span class="icon"><i class="fa fa-blogger"></i></span> -->
+    <!-- </a> -->
+
+    <!-- Linkedin -->
+    <a class="button"
+       href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}">
+      <span class="icon"><i class="fa fa-linkedin"></i></span>
+    </a>
+
+    <!-- Reddit -->
+    <a class="button"
+       href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
+      <span class="icon"><i class="fa fa-reddit"></i></span>
+    </a>
+
+  </p>
+</div>
