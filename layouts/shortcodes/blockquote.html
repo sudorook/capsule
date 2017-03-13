@@ -1,0 +1,26 @@
+<div class="content">
+  <blockquote>
+    <p>
+      {{ $space := "&nbsp;&nbsp;&nbsp;&nbsp;" }}
+      {{ .Inner | replaceRE "(\t)" $space | replaceRE "( ){4}" $space | markdownify }}
+    </p>
+    <footer class="is-flex">
+      <span>&mdash;&nbsp;</span>
+      <span>
+      {{ with .Get "author" }}
+        <p class="title is-5">{{.}}</p>
+      {{ end }}
+      {{ if and (.Get "source") (.Get "date") }}
+        <p class="subtitle is-6">
+          {{ .Get "source" }}, {{ .Get "date" }}
+        </p>
+      {{ else }}
+        <p class="subtitle is-6">
+        {{ with .Get "source" }}{{.}}{{ end }}
+        {{ with .Get "date" }}{{.}}{{ end }}
+        </p>
+      {{ end }}
+      </span>
+    </footer>
+  </blockquote>
+</div>
