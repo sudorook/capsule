@@ -50,7 +50,7 @@
         {{ .Title }}
       </h1>
       <h2 class="subtitle">
-        {{ .Description }}
+        {{ with .Site.Params.Description }}{{.}}{{ end }}
       </h2>
     </div>
   </div>
