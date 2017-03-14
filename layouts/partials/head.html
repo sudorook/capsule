@@ -113,6 +113,10 @@
 
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="/css/capsule.min.css"/>
+  {{ with .Params.css }}{{ . | safeCSS | htmlUnescape | safeHTML }}{{ end }}
+
+  <!-- JS -->
+  {{ with .Params.js }}{{ . | safeJS | htmlUnescape | safeHTML }}{{ end }}
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="{{ .Site.Data.defaults.icons.appleicon }}"/>
