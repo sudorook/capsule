@@ -16,7 +16,7 @@
                  {{ else }}{{ .Params.description }}
                  {{ end }}"/>
   {{ end }}
-  
+
 
   {{ .Hugo.Generator }}
 
@@ -33,27 +33,27 @@
                  {{ else }}{{ .Params.description }}
                  {{ end }}"/>
   {{ end }}
-  <meta itemprop="image" 
+  <meta itemprop="image"
         content="{{ with .Params.image }}{{.}}
                  {{ else }}{{ .Site.Data.defaults.icons.logo }}
                  {{ end }}"/>
 
   <!-- OpenGraph data -->
   <meta property="og:title" content="{{ .Title }}"/>
-  <meta property="og:type" 
+  <meta property="og:type"
         content="{{ if .IsPage }} article {{ else }} website {{ end }}"/>
   <meta property="og:url" content="{{ .Permalink }}"/>
-  <meta property="og:image" 
+  <meta property="og:image"
         content="{{ with .Params.image }}{{.}}
                  {{ else }}{{ .Site.Data.defaults.icons.logo }}
                  {{ end }}"/>
   {{ if .IsPage }}
-  <meta property="og:description" 
+  <meta property="og:description"
         content="{{ with .Description }}{{.}}
                  {{ else }}{{ .Content | safeHTML | truncate 200 "..." }}
                  {{ end }}"/>
   {{ else }}
-  <meta property="og:description" 
+  <meta property="og:description"
         content="{{ with .Description }}{{.}}
                  {{ else }}{{ .Params.description }}
                  {{ end }}"/>
@@ -89,10 +89,10 @@
   <!-- Twitter card data -->
   <!-- twitter:card can also be summary_large_image -->
   <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:site" 
+  <meta name="twitter:site"
         content="{{ with .Site.Social.twitter }}@{{.}}{{ end }}"/>
   <meta name="twitter:title" content="{{ .Title }}"/>
-  <meta name="twitter:description" 
+  <meta name="twitter:description"
         content="{{ with .Description }}{{.}}
                  {{ else }}{{ .Content | safeHTML | truncate 200 "..." }}
                  {{ end }}"/>
