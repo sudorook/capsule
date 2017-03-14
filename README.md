@@ -73,6 +73,27 @@ above example uses GitHub, but GitLab and any other site that follows the
 format of `<siteurl>/<user>/<repo>/commit/<hash>` will work, too. 
 
 
+###5. Add custom javascript or css to a page
+
+In the toml header, add: 
+```
+css = """
+<style>
+ ...
+</style>
+"""
+
+js = """
+<script>
+ ...
+</script>
+"""
+```
+
+Any css or js specified here will add to the site \<head\> when hugo renders
+the page.
+
+
 # Build
 
 To (re)build the CSS, you need to have npm and gulp installed. Clone the
