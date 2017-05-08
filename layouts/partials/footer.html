@@ -42,12 +42,25 @@
           </a>
           &nbsp;
 
-          <!-- It's not the most robust way of generating links... -->
+          <!-- Most sites have the template https://<site>.com/<user>, so just
+               use that instead of hardcoding everything. Sites that don't
+               follow the template will need hard-coding, though... -->
           {{ range $key, $value := .Site.Social }}
+          
+          <!-- Sites that need special rules go first -->
+            {{ if eq $key "hacker-news" }}
+          <a class="button"
+             href="https://news.ycombinator.com/user?id={{ $value }}">
+            <span class="icon"><i class="fa fa-{{ $key }}"></i></span>
+          </a>
+          &nbsp;
+          <!-- Default -->
+            {{ else }}
           <a class="button" href="https://{{ $key }}.com/{{ $value }}">
             <span class="icon"><i class="fa fa-{{ $key }}"></i></span>
           </a>
           &nbsp;
+            {{ end }}
           {{ end }}
 
           <a class="button" href="{{ .Site.RSSLink }}">
