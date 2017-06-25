@@ -1,22 +1,22 @@
 <footer class="footer">
   <div class="container">
     <nav class="level">
-      {{ $node := . }}
-      {{ range .Site.Menus.main }}
-      <div class="level-item has-text-centered">
-        <a href="{{ .URL }}" class="heading is-large">
-          <span class="header">{{ .Name }}</span>
-        </a>
-      </div>
-      {{ end }}
-
-      <!-- {{ range $section, $page := .Site.Sections }} -->
+      <!-- {{ $node := . }} -->
+      <!-- {{ range .Site.Menus.main }} -->
       <!-- <div class="level-item has-text-centered"> -->
-      <!--   <a href="{{ $section }}" class="is-outlined"> -->
-      <!--     <span class="header">{{ title $section }}</span> -->
+      <!--   <a href="{{ .URL }}" class="heading is-large"> -->
+      <!--     <span class="header">{{ .Name }}</span> -->
       <!--   </a> -->
       <!-- </div> -->
       <!-- {{ end }} -->
+
+      {{ range $.Site.Home.Sections }}
+      <div class="level-item has-text-centered">
+        <a href="{{ .URL }}" class="heading">
+          <span class="header">{{ .Title }}</span>
+        </a>
+      </div>
+      {{ end }}
 
     </nav>
 
