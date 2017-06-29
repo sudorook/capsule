@@ -13,7 +13,11 @@
       <div class="container" style="min-height:56vh">
         <p class="title">{{ .Title }}</p>
         <p class="subtitle">{{ .Date.Format "Jan 2, 2006" }}</p>
-        {{ .Content }}
+
+        <div class="content">
+          {{ .Content }}
+        </div>
+
         {{ partial "gitinfo.html" . }}
         {{ partial "taglist.html" . }}
       </div>
