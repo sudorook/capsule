@@ -18,20 +18,20 @@ flag, or you can add `theme = "capsule"` to your config.toml file.
 
 ## Notes: 
 
-### 1. Synatx highlighting (via pygments)
+### 1. Syntax highlighting (via pygments)
 
 For code blocks, pick the highlighter style in config.toml by setting: 
 ```
 pygmentsstyle = "<style>"
 ```
 
-For dark highlighter themes, you should rebuild capsule css with
+For dark highlighter themes, you should rebuild capsule CSS with
 `build/extra/syntax.sass`. Uncomment it from the capsule.sass file and run
 `gulp`.
 
 Without that file, the background color will default to Bulma's light
-background-color, and colored elements from dark themes will be hard to read
-against it.
+background-color, and light colored elements meant to be displayed against dark
+backgrounds from dark themes will be hard to read.
 
 
 ### 2. Unused classes in Bulma
@@ -73,7 +73,7 @@ above example uses GitHub, but GitLab and any other site that follows the
 format of `<siteurl>/<user>/<repo>/commit/<hash>` will work, too. 
 
 
-###5. Add custom javascript or css to a page
+###5. Add custom javascript or CSS to a page
 
 In the toml header, add: 
 ```
@@ -90,7 +90,7 @@ js = """
 """
 ```
 
-Any css or js specified here will add to the site \<head\> when hugo renders
+Any CSS or JS specified here will add to the site \<head\> when hugo renders
 the page.
 
 
