@@ -73,7 +73,7 @@ above example uses GitHub, but GitLab and any other site that follows the
 format of `<siteurl>/<user>/<repo>/commit/<hash>` will work, too. 
 
 
-###5. Add custom javascript or CSS to a page
+### 5. Add custom javascript or CSS to a page
 
 In the toml header, add: 
 ```
