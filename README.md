@@ -94,6 +94,17 @@ Any CSS or JS specified here will add to the site \<head\> when hugo renders
 the page.
 
 
+### 6. Enable table of contents
+
+To generate a table of contents for a specific page, add to the toml header:
+```
+toc = true
+```
+
+The table of contents will contain all the header items defined in the
+markdown. The nesting levels for each match the header weight (h1, h2, etc.).
+
+
 # Build
 
 To (re)build the CSS, you need to have npm and gulp installed. Clone the
