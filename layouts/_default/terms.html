@@ -13,8 +13,8 @@
       <div class="container" style="min-height:56vh">
         <p class="title">List of {{ .Title }}</p>
         <ul>
-        {{ $data := .Data }}
-        {{ range $key, $value := .Data.Terms.ByCount }}
+        {{- $data := .Data }}
+        {{- range $key, $value := .Data.Terms.ByCount }}
           <li class="title is-4 is-flex" style="justify-content:space-between">
             <span>
               <a href="{{ urlize "/" }}{{ $data.Plural }}/{{ $value.Name | urlize }}">
@@ -25,7 +25,7 @@
               {{ $value.Count }} posts
             </span>
           </li>
-        {{ end }}
+        {{- end }}
         </ul>
       </div>
 

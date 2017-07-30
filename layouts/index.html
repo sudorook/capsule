@@ -15,9 +15,9 @@
           <div class="column">
             <!-- Content -->
             <div class="container" style="min-height:56vh">
-              {{ range .Paginator.Pages }}
+              {{- range .Paginator.Pages }}
                 {{ .Render "summary" }}
-              {{ end }}
+              {{- end }}
             </div>
 
             <br>
