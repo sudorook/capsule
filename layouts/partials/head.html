@@ -21,7 +21,7 @@
   {{ .Hugo.Generator }}
 
   <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content="{ .Title }"/>
+  <meta itemprop="name" content="{{ .Title }}"/>
   {{- if .IsPage }}
   <meta itemprop="description"
         content="{{ with .Description }}{{ . -}}
