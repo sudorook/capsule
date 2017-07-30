@@ -1,4 +1,4 @@
-{{ if and .GitInfo (.Site.Params.repo) }}
+{{- if and .GitInfo (.Site.Params.repo) }}
 <br>
 <p class="heading">
   Last edited:
@@ -6,4 +6,4 @@
     {{ .GitInfo.AuthorDate.Format "Jan 2, 2006"  }}
   </a>
 </p>
-{{ end }}
+{{- end }}

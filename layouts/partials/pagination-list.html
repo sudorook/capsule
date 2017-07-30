@@ -1,62 +1,62 @@
 <div class="container">
   <nav class="pagination">
-    {{ if .Paginator.HasPrev }}
+    {{- if .Paginator.HasPrev }}
     <a href="{{ .Paginator.Prev.URL}}" class="pagination-previous">Previous</a>
-    {{ else }}
+    {{- else }}
     <a class="pagination-previous" disabled>Previous</a>
-    {{ end }}
+    {{- end }}
 
-    {{ if .Paginator.HasNext }}
+    {{- if .Paginator.HasNext }}
     <a href="{{ .Paginator.Next.URL}}" class="pagination-next">Next</a>
-    {{ else }}
+    {{- else }}
     <a class="pagination-next" disabled>Next</a>
-    {{ end }}
+    {{- end }}
 
     <ul class="pagination-list">
 
-    {{ if .Paginator.HasPrev }}
-      {{ if eq .Paginator.Prev.PageNumber 1 }}
+    {{- if .Paginator.HasPrev }}
+      {{- if eq .Paginator.Prev.PageNumber 1 }}
       <li><a href="{{ .Paginator.Prev.URL }}" class="pagination-link">
         {{ .Paginator.Prev.PageNumber }}
       </a></li>
-      {{ else }}
+      {{- else }}
       <li><a href="{{ .Paginator.First.URL }}" class="pagination-link">
         {{ .Paginator.First.PageNumber }}
       </a></li>
-        {{ if ne .Paginator.Prev.Prev.PageNumber 1 }}
+        {{- if ne .Paginator.Prev.Prev.PageNumber 1 }}
       <li>
         <span class="pagination-ellipsis">&hellip;</span>
       </li>
-        {{ end }}
+        {{- end }}
       <li><a href="{{ .Paginator.Prev.URL }}" class="pagination-link">
         {{ .Paginator.Prev.PageNumber }}
       </a></li>
-      {{ end }}
-    {{ end }}
+      {{- end }}
+    {{- end }}
 
       <li><a href="{{ .Paginator.URL }}" class="pagination-link is-current">
         {{ .Paginator.PageNumber }}
       </a></li>
 
-    {{ if .Paginator.HasNext }}
-      {{ if eq .Paginator.Next.PageNumber .Paginator.Last.PageNumber }}
+    {{- if .Paginator.HasNext }}
+      {{- if eq .Paginator.Next.PageNumber .Paginator.Last.PageNumber }}
       <li><a href="{{ .Paginator.Next.URL }}" class="pagination-link">
         {{ .Paginator.Next.PageNumber }}
       </a></li>
-      {{ else }}
+      {{- else }}
       <li><a href="{{ .Paginator.Next.URL }}" class="pagination-link">
         {{ .Paginator.Next.PageNumber }}
       </a></li>
-        {{ if ne .Paginator.Next.Next.PageNumber .Paginator.Last.PageNumber }}
+        {{- if ne .Paginator.Next.Next.PageNumber .Paginator.Last.PageNumber }}
       <li>
         <span class="pagination-ellipsis">&hellip;</span>
       </li>
-        {{ end }}
+        {{- end }}
       <li><a href="{{ .Paginator.Last.URL }}" class="pagination-link">
-        {{ .Paginator.Last.PageNumber }}
+        {{- .Paginator.Last.PageNumber }}
       </a></li>
-      {{ end }}
-    {{ end }}
+      {{- end }}
+    {{- end }}
 
     </ul>
   </nav>

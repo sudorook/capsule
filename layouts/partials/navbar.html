@@ -21,15 +21,15 @@
     <input type="checkbox" id="nav-toggle-state"/>
 
     <div class="nav-right nav-menu">
-      {{ $node := . }}
-      {{ range .Site.Menus.main }}
+      {{- $node := . }}
+      {{- range .Site.Menus.main }}
       <a href="{{ .URL }}"
          class="nav-item is-tab
-                {{ if or ($node.IsMenuCurrent "main" .) ($node.HasMenuCurrent "main" .) }}
+                {{ if or ($node.IsMenuCurrent "main" .) ($node.HasMenuCurrent "main" .) -}}
                   is-active
-                {{ end }}">{{ .Name }}
+                {{- end }}">{{ .Name }}
       </a>
-      {{ end }}
+      {{- end }}
     </div>
 
   </div>

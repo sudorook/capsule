@@ -1,30 +1,30 @@
 <!-- Check the page if it uses any site-wide taxonomy terms. If so, then
    - insert a line break betweek the .Summary and the taglist partial -->
-{{ $.Scratch.Set "has_taxa" false }}
-{{ range $name, $taxonomy := .Site.Taxonomies }}
-  {{ range $key, $value := $.Params }}
-    {{ if eq $key $name }}
-      {{ $.Scratch.Set "has_taxa" true }}
-    {{ end }}
-  {{ end }}
-{{ end }}
-{{ if $.Scratch.Get "has_taxa" }}
+{{- $.Scratch.Set "has_taxa" false }}
+{{- range $name, $taxonomy := .Site.Taxonomies }}
+  {{- range $key, $value := $.Params }}
+    {{- if eq $key $name }}
+      {{- $.Scratch.Set "has_taxa" true }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- if $.Scratch.Get "has_taxa" }}
 <br>
-{{ end }}
+{{- end }}
 
-{{ range $name, $taxonomy := .Site.Taxonomies }}
-  {{ range $key, $value := $.Params }}
-  {{ if eq $key $name }}
-  <p class="is-flex">
-    <span class="heading">{{ $name | humanize | title }}:</span>
-    <span>
-      {{ range $item := $value }}
-      <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $item) | urlize | lower }}">
-        <span class="tag">{{ $item | humanize | title }}</span>
-      </a>
-      {{ end }}
-    </span>
-  </p>
-  {{ end }}
-  {{ end }}
-{{ end }}
+{{- range $name, $taxonomy := .Site.Taxonomies }}
+  {{- range $key, $value := $.Params }}
+  {{- if eq $key $name }}
+<p class="is-flex">
+  <span class="heading">{{ $name | humanize | title }}:</span>
+  <span>
+    {{- range $item := $value }}
+    <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $item) | urlize | lower }}">
+      <span class="tag">{{ $item | humanize | title }}</span>
+    </a>
+    {{- end }}
+  </span>
+</p>
+  {{- end }}
+  {{- end }}
+{{- end }}

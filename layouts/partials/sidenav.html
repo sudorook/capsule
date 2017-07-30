@@ -1,17 +1,17 @@
 <aside class="menu">
-  {{ range $name, $taxonomy := .Site.Taxonomies }}
-  {{ if not (eq (len $taxonomy) 0) }}
+  {{- range $name, $taxonomy := .Site.Taxonomies }}
+  {{- if not (eq (len $taxonomy) 0) }}
   <p class="menu-label">{{ $name | title }}</p>
   <ul class="menu-list">
-    {{ range $key, $value := $taxonomy }}
+    {{- range $key, $value := $taxonomy }}
     <li>
       <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $key) | urlize | lower }}">
         <span>{{ $key | humanize | title }}</span>
         <span class="tag">{{ len $value }}</span>
       </a>
     </li>
-    {{ end }}
+    {{- end }}
   </ul>
-  {{ end }}
-  {{ end }}
+  {{- end }}
+  {{- end }}
 </aside>
