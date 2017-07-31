@@ -1,0 +1,16 @@
+{{- with .Get "link" }}
+  {{- if eq . "self" }}<a href="{{ $.Get "src" }}">
+  {{- else }}<a href="{{.}}">
+  {{- end }}
+{{- end }}
+  <img src="{{ .Get "src" }}"
+       {{- with .Get "align" }}
+         {{- if eq . "left" }}align="{{.}}" style="margin:0 .5rem 0 0"
+         {{- else if eq . "right" }}align="{{.}}" style="margin:0 0 0 .5rem"
+         {{- end }}
+       {{- end }}
+       {{- with .Get "class" }} class="{{.}}" {{ end }}
+       {{- if or (.Get "alt") (.Get "caption") }}
+       alt="{{ with .Get "alt"}}{{.}}{{ else }}{{ .Get "caption" }}{{ end }}"
+       {{- end }} />
+{{ if .Get "link" }}</a>{{ end }}

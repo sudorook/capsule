@@ -1,0 +1,25 @@
+<figure {{ with .Get "class" }}class="{{.}}"{{ end }}>
+  {{- with .Get "link"}}
+    {{- if eq . "self" }}<a href="{{ $.Get "src"}}">
+    {{- else }}<a href="{{.}}">
+    {{- end }}
+  {{- end }}
+  <img src="{{ .Get "src" }}"
+       {{- if or (.Get "alt") (.Get "caption") }}
+       alt="{{ with .Get "alt"}}{{.}}{{ else }}{{ .Get "caption" }}{{ end }}"
+       {{- end }} />
+  {{- if .Get "link"}}</a>{{ end }}
+  {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr")}}
+  <figcaption>
+    {{ if isset .Params "title" }}<p class="title is-4">{{ .Get "title" }}</p>{{ end }}
+    {{ if or (.Get "caption") (.Get "attr") (.Get "subtitle") }}<p class="subtitle is-6">
+    {{- with .Get "caption" }}{{.}}{{ else }}{{ .Get "subtitle" }}{{ end }}
+    {{- if and (or (.Get "title") (.Get "caption")) (.Get "attr")}},{{ end }}
+    {{- with .Get "attrlink"}}<a href="{{.}}"> {{ end }}
+      {{- .Get "attr" }}
+    {{- if .Get "attrlink"}}</a> {{- end }}
+    </p> {{- end }}
+  </figcaption>
+  {{ end }}
+</figure>
+    
