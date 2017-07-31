@@ -13,9 +13,9 @@
       <div class="title is-5">{{ .Get "author" | title }}</div>
       <div class="subtitle is-6">
       {{- if and (.Get "source") (.Get "date") -}}
-        {{- .Get "source" | title }}, {{ .Get "date" | title }}
+        <i>{{- .Get "source" | title }}</i>, {{ .Get "date" | title }}
       {{- else -}}
-        {{- with .Get "source" }}{{ . | title }}{{ end }}
+        {{- with .Get "source" }}<i>{{ . | title }}</i>{{ end }}
         {{- with .Get "date" }}{{ . | title }}{{ end }}
       {{- end -}}
       </div>
@@ -23,13 +23,13 @@
     {{- else if and (.Get "source") (.Get "date") }}
     <span class="title is-5">&mdash;&nbsp;</span>
     <span>
-      <div class="title is-5">{{- .Get "source" | title -}}</div>
+      <div class="title is-5"><i>{{- .Get "source" | title -}}</i></div>
       <div class="subtitle is-6">{{- .Get "date" | title -}}</div>
     </span>
     {{- else }}
       {{- with .Get "source" }}
       <span class="title is-5">&mdash;&nbsp;</span>
-      <span class="title is-5">{{ . | title }}</span>
+      <span class="title is-5"><i>{{ . | title }}</i></span>
       {{- end }}
       {{- with .Get "date" }}
       <span class="title is-5">&mdash;&nbsp;</span>
