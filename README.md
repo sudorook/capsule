@@ -16,6 +16,11 @@ You can then either build Hugo on the command line and pass the `-t capsule`
 flag, or you can add `theme = "capsule"` to your config.toml file.
 
 
+**Note: Any additional documentation will be added to the [Capsule
+Demo](https://pseudorook.github.io/capsule-demo) site, not here.**
+
+
+
 ## Notes: 
 
 ### 1. Syntax highlighting (via pygments)
