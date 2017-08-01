@@ -10,7 +10,7 @@
     <section class="section" style="flex:1">
 
       <!-- Content -->
-      <div class="container" style="min-height:56vh">
+      <div class="container">
         <p class="title">{{ .Title }}</p>
         <p class="subtitle">{{ .Date.Format "Jan 2, 2006" }}</p>
 
@@ -24,8 +24,9 @@
         {{ partial "taglist.html" . }}
       </div>
 
-      <br>
+    </section>
 
+    <section class="section">
       <!-- Pagination -->
       {{ partial "pagination-single-all.html" . }}
 
