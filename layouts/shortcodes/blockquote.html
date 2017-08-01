@@ -1,42 +1,44 @@
-<blockquote>
+<div class="content">
+  <blockquote>
 
-  <p>
-    {{- $space := "&nbsp;&nbsp;&nbsp;&nbsp;" -}}
-    {{- .Inner | replaceRE "(\t)" $space | replaceRE "( ){4}" $space | markdownify -}}
-  </p>
+    <p>
+      {{- $space := "&nbsp;&nbsp;&nbsp;&nbsp;" -}}
+      {{- .Inner | replaceRE "(\t)" $space | replaceRE "( ){4}" $space | markdownify -}}
+    </p>
 
-  {{- if or (.Get "author") (or (.Get "source") (.Get "date")) }}
-  <footer class="is-flex">
-    {{- if .Get "author" }}
-    <span class="title is-5">&mdash;&nbsp;</span>
-    <span>
-      <div class="title is-5">{{ .Get "author" | title }}</div>
-      <div class="subtitle is-6">
-      {{- if and (.Get "source") (.Get "date") -}}
-        <i>{{- .Get "source" | title }}</i>, {{ .Get "date" | title }}
-      {{- else -}}
-        {{- with .Get "source" }}<i>{{ . | title }}</i>{{ end }}
-        {{- with .Get "date" }}{{ . | title }}{{ end }}
-      {{- end -}}
-      </div>
-    </span>
-    {{- else if and (.Get "source") (.Get "date") }}
-    <span class="title is-5">&mdash;&nbsp;</span>
-    <span>
-      <div class="title is-5"><i>{{- .Get "source" | title -}}</i></div>
-      <div class="subtitle is-6">{{- .Get "date" | title -}}</div>
-    </span>
-    {{- else }}
-      {{- with .Get "source" }}
+    {{- if or (.Get "author") (or (.Get "source") (.Get "date")) }}
+    <footer class="is-flex">
+      {{- if .Get "author" }}
       <span class="title is-5">&mdash;&nbsp;</span>
-      <span class="title is-5"><i>{{ . | title }}</i></span>
-      {{- end }}
-      {{- with .Get "date" }}
+      <span>
+        <div class="title is-5">{{ .Get "author" | title }}</div>
+        <div class="subtitle is-6">
+        {{- if and (.Get "source") (.Get "date") -}}
+          <i>{{- .Get "source" | title }}</i>, {{ .Get "date" | title }}
+        {{- else -}}
+          {{- with .Get "source" }}<i>{{ . | title }}</i>{{ end }}
+          {{- with .Get "date" }}{{ . | title }}{{ end }}
+        {{- end -}}
+        </div>
+      </span>
+      {{- else if and (.Get "source") (.Get "date") }}
       <span class="title is-5">&mdash;&nbsp;</span>
-      <span class="title is-5">{{ . | title }}</span>
+      <span>
+        <div class="title is-5"><i>{{- .Get "source" | title -}}</i></div>
+        <div class="subtitle is-6">{{- .Get "date" | title -}}</div>
+      </span>
+      {{- else }}
+        {{- with .Get "source" }}
+        <span class="title is-5">&mdash;&nbsp;</span>
+        <span class="title is-5"><i>{{ . | title }}</i></span>
+        {{- end }}
+        {{- with .Get "date" }}
+        <span class="title is-5">&mdash;&nbsp;</span>
+        <span class="title is-5">{{ . | title }}</span>
+        {{- end }}
       {{- end }}
+    </footer>
     {{- end }}
-  </footer>
-  {{- end }}
 
-</blockquote>
+  </blockquote>
+</div>
