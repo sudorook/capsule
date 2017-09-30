@@ -6,7 +6,7 @@
 <section class="hero {{ with .Get "class" }}{{.}}{{ end }}">
 
   <div class="hero-body"
-       style="background:url({{ with .Get "img" }}{{.}}{{ end }}) center;
+       style="background:url({{ with .Get "img" }}'{{ . | relURL }}'{{ end }}) center;
               {{- if eq (.Get "mode") "stretch" }}background-size: cover;
               {{- else if eq (.Get "mode") "repeat" }}background-size: auto 100%;
               {{- end }}">
