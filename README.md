@@ -17,7 +17,7 @@ flag, or you can add `theme = "capsule"` to your config.toml file.
 
 
 **Note: Any additional documentation will be added to the [Capsule
-Demo](https://pseudorook.github.io/capsule-demo) site, not here.**
+Demo](https://pseudorook.gitlab.io/capsule-demo) site, not here.**
 
 
 
