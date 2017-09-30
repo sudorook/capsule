@@ -5,8 +5,27 @@
 
 <section class="hero {{ with .Get "class" }}{{.}}{{ end }}">
 
+{{ $.Scratch.Set "url" ($.Page.Permalink | replaceRE "^//localhost:[0-9]*/" "" | replaceRE "^/" "" | replaceRE "/$" "") -}}
+{{ if eq (len ($.Scratch.Get "url")) 0 -}}
+  {{ $.Scratch.Set "prefix" "." -}}
+{{ else -}}
+  {{ $.Scratch.Set "length" ((split ($.Scratch.Get "url") "/") | len) -}}
+  {{ if eq ($.Scratch.Get "length") 0 -}}
+    {{ $.Scratch.Set "prefix" "." -}}
+  {{ else -}}
+    {{ $.Scratch.Set "prefix" "" -}}
+    {{ range $i, $e := (seq ($.Scratch.Get "length")) -}}
+      {{ if eq (add $i 1) ($.Scratch.Get "length") -}}
+        {{ $.Scratch.Set "prefix" (print ($.Scratch.Get "prefix") "..") -}}
+      {{ else -}}
+        {{ $.Scratch.Set "prefix" (print ($.Scratch.Get "prefix") "../") -}}
+      {{ end -}}
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
+
   <div class="hero-body"
-       style="background:url({{ with .Get "img" }}'{{ . | relURL }}'{{ end }}) center;
+       style="background:url('{{ with .Get "img" }}{{ $.Scratch.Get "prefix" }}{{.}}{{ end }}') center;
               {{- if eq (.Get "mode") "stretch" }}background-size: cover;
               {{- else if eq (.Get "mode") "repeat" }}background-size: auto 100%;
               {{- end }}">
