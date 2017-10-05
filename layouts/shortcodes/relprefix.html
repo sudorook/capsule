@@ -1,0 +1,18 @@
+{{ $.Scratch.Set "url" ($.Page.Permalink | replaceRE "^//localhost:[0-9]*/" "" | replaceRE "^/" "" | replaceRE "/$" "") -}}
+{{ if eq (len ($.Scratch.Get "url")) 0 -}}
+  {{ $.Scratch.Set "prefix" "." -}}
+{{ else -}}
+  {{ $.Scratch.Set "length" ((split ($.Scratch.Get "url") "/") | len) -}}
+  {{ if eq ($.Scratch.Get "length") 0 -}}
+    {{ $.Scratch.Set "prefix" "." -}}
+  {{ else -}}
+    {{ $.Scratch.Set "prefix" "" -}}
+    {{ range $i, $e := (seq ($.Scratch.Get "length")) -}}
+      {{ if eq (add $i 1) ($.Scratch.Get "length") -}}
+        {{ $.Scratch.Set "prefix" (print ($.Scratch.Get "prefix") "..") -}}
+      {{ else -}}
+        {{ $.Scratch.Set "prefix" (print ($.Scratch.Get "prefix") "../") -}}
+      {{ end -}}
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
