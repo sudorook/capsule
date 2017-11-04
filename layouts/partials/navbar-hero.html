@@ -3,30 +3,31 @@
   <!-- Hero header: will stick at the top -->
   <div class="hero-head">
 
-    <nav class="nav has-shadow">
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
       <div class="container">
 
-        <div class="nav-left">
-          <a class="nav-item is-brand" href="/">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
             <div class="title is-4">&nbsp;{{ .Site.Title }}</div>
           </a>
+
+          <!-- Using a <label /> here -->
+          <label class="button navbar-burger is-dark" for="navbar-burger-state">
+            <span></span>                              <!--^^^^^^^^^^^^^^^^^^^-->
+            <span></span>
+            <span></span>
+          </label>
         </div>
 
-        <!-- Using a <label /> here -->
-        <label class="nav-toggle" for="nav-toggle-state">
-          <span></span>           <!-- ^^^^^^^^^^^^^^^^ -->
-          <span></span>
-          <span></span>
-        </label>
-
         <!-- This checkbox is hidden -->
-        <input type="checkbox" id="nav-toggle-state"/>
+        <input type="checkbox" id="navbar-burger-state"/>
 
-        <div class="nav-right nav-menu">
+        <div class="navbar-menu">
+          <div class="navbar-end tabs">
           {{- $node := . }}
           {{- range .Site.Menus.main }}
           <a href="{{ .URL }}"
-             class="nav-item is-tab
+             class="navbar-item is-tab
                     {{ if or ($node.IsMenuCurrent "main" .) ($node.HasMenuCurrent "main" .) -}}
                       is-active
                     {{- end }}">{{ .Name }}
