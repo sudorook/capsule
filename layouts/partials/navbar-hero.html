@@ -23,11 +23,11 @@
         <input type="checkbox" id="navbar-burger-state"/>
 
         <div class="navbar-menu">
-          <div class="navbar-end tabs">
+          <div class="navbar-end">
           {{- $node := . }}
           {{- range .Site.Menus.main }}
           <a href="{{ .URL }}"
-             class="navbar-item is-tab
+             class="navbar-item
                     {{ if or ($node.IsMenuCurrent "main" .) ($node.HasMenuCurrent "main" .) -}}
                       is-active
                     {{- end }}">{{ .Name }}
