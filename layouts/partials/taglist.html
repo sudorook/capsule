@@ -15,16 +15,16 @@
 {{- range $name, $taxonomy := .Site.Taxonomies }}
   {{- range $key, $value := $.Params }}
   {{- if eq $key $name }}
-<p class="is-flex">
-  <span class="heading">{{ $name | humanize | title }}:</span>
-  <span>
-    {{- range $item := $value }}
+<div class="heading">{{ $name | humanize | title }}:</div>
+<div class="field is-grouped is-grouped-multiline">
+  {{- range $item := $value }}
+  <div class="control">
     <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $item) | urlize | lower }}">
       <span class="tag">{{ $item | humanize | title }}</span>
     </a>
-    {{- end }}
-  </span>
-</p>
+  </div>
+  {{- end }}
+</div>
   {{- end }}
   {{- end }}
 {{- end }}
