@@ -6,8 +6,10 @@
     {{- range $key, $value := $taxonomy }}
     <li>
       <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $key) | urlize | lower }}">
-        <span>{{ $key | humanize | title }}</span>
-        <span class="tag">{{ len $value }}</span>
+        <div class="tags has-addons">
+          <span class="tag">{{ $key | humanize | title }}</span>
+          <span class="tag is-link">{{ len $value }}</span>
+        </div>
       </a>
     </li>
     {{- end }}
