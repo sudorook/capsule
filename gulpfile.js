@@ -6,7 +6,7 @@
 const gulp   = require('gulp'),
       concat = require('gulp-concat'),
       cssmin = require('gulp-cssmin'),
-      print  = require('gulp-print'),
+      print  = require('gulp-print').default,
       rename = require('gulp-rename'),
       sass   = require('gulp-sass'),
       util   = require('gulp-util')
