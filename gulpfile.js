@@ -6,6 +6,7 @@
 const gulp   = require('gulp'),
       concat = require('gulp-concat'),
       cssmin = require('gulp-cssmin'),
+      print  = require('gulp-print'),
       rename = require('gulp-rename'),
       sass   = require('gulp-sass'),
       util   = require('gulp-util')
@@ -68,6 +69,7 @@ gulp.task('default', function() {
 gulp.task('sass', function() {
   return gulp.src([build.sass + 'capsule.sass'])
     .pipe(sass())
+    .pipe(print())
     .pipe(cssmin())
     .pipe(rename(function (name) {
       name.extname = '.min.css';
