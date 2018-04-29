@@ -19,17 +19,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pseudorook/capsule.git"
+    "url": "git+https://github.com/sudorook/capsule.git"
   },
   "keywords": [
     "bulma",
     "css",
     "hugo"
   ],
-  "author": "pseudorook",
+  "author": "sudorook",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/pseudorook/capsule/issues"
+    "url": "https://github.com/sudorook/capsule/issues"
   },
-  "homepage": "https://github.com/pseudorook/capsule#readme"
+  "homepage": "https://github.com/sudorook/capsule#readme"
 }

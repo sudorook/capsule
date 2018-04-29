@@ -9,7 +9,7 @@ A CSS-only Hugo theme using the Bulma CSS framework and Font-Awesome icons.
 From the base of your website, run: 
 
 ```
-git submodule add https://github.com/pseudorook/capsule themes/capsule
+git submodule add https://github.com/sudorook/capsule themes/capsule
 ```
 
 You can then either build Hugo on the command line and pass the `-t capsule`
@@ -17,7 +17,7 @@ flag, or you can add `theme = "capsule"` to your config.toml file.
 
 
 **Note: Any additional documentation will be added to the [Capsule
-Demo](https://pseudorook.gitlab.io/capsule-demo) site, not here.**
+Demo](https://sudorook.gitlab.io/capsule-demo) site, not here.**
 
 
 
