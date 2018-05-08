@@ -35,8 +35,9 @@
   {{- end }}
   <meta itemprop="image"
         content="{{ with .Params.image }}{{ . -}}
-                 {{ else }}{{ .Site.Data.defaults.icons.logo -}}
-                 {{ end }}"/>
+                 {{ else }}{{ if (fileExists .Site.Data.defaults.icons.logo) -}}
+                   {{ .Site.Data.defaults.icons.logo -}}
+                 {{ end }}{{ end }}"/>
 
   <!-- OpenGraph data -->
   <meta property="og:title" content="{{ .Title }}"/>
@@ -45,8 +46,9 @@
   <meta property="og:url" content="{{ .Permalink }}"/>
   <meta property="og:image"
         content="{{ with .Params.image }}{{ . -}}
-                 {{ else }}{{ .Site.Data.defaults.icons.logo -}}
-                 {{ end }}"/>
+                 {{ else }}{{ if (fileExists .Site.Data.defaults.icons.logo) -}}
+                   {{ .Site.Data.defaults.icons.logo -}}
+                 {{ end }}{{ end }}"/>
   {{- if .IsPage }}
   <meta property="og:description"
         content="{{ with .Description }}{{ . -}}
@@ -100,8 +102,9 @@
         content="{{ with .Site.Social.twitter }}@{{.}}{{ end }}"/>
   <meta name="twitter:image:src"
         content="{{ with .Params.image }}{{. -}}
-                 {{ else }}{{ .Site.Data.defaults.icons.logo -}}
-                 {{ end }}"/>
+                 {{ else }}{{ if (fileExists .Site.Data.defaults.icons.logo) -}}
+                   {{ .Site.Data.defaults.icons.logo -}}
+                 {{ end }}{{ end }}"/>
 
   <!-- RSS -->
   {{- if .RSSLink }}
@@ -119,6 +122,10 @@
   {{ with .Params.js }}{{ . | safeJS | htmlUnescape | safeHTML }}{{ end -}}
 
   <!-- Favicons -->
+  {{ if (fileExists .Site.Data.defaults.icons.appleicon) -}}
   <link rel="apple-touch-icon" href="{{ .Site.Data.defaults.icons.appleicon }}"/>
+  {{ end -}}
+  {{ if (fileExists .Site.Data.defaults.icons.favicon) -}}
   <link rel="icon" href="{{ .Site.Data.defaults.icons.favicon }}"/>
+  {{ end -}}
 </head>
