@@ -51,7 +51,7 @@
 
       <!-- Pinterest -->
       <a class="button"
-         href="https://pinterest.com/pin/create/bookmarklet/?media={{ with .Params.image }}{{.}}{{ else }}{{ if (fileExists .Site.Data.defaults.icons.logo) }}{{ .Site.Data.defaults.icons.logo }}{{ end }}{{ end }}&url={{ .Permalink }}&description={{ .Title }}">
+         href="https://pinterest.com/pin/create/bookmarklet/?media={{ with .Params.image }}{{.}}{{ else }}{{ if (fileExists (print "/static" .Site.Data.defaults.icons.logo)) }}{{ .Site.Data.defaults.icons.logo }}{{ end }}{{ end }}&url={{ .Permalink }}&description={{ .Title }}">
         <span class="icon"><i class="fa fa-pinterest"></i></span>
       </a>
 
