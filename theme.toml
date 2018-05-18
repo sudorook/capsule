@@ -14,7 +14,7 @@ features = [
              "css only",
              "no javascript",
              "built-in pagination",
-             "display git metadata"
+             "display git metadata",
              "automatic share links",
              "Bulma classes as shortcodes",
              "image/figure shortcodes",
