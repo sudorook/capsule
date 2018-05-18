@@ -3,10 +3,26 @@ license = "GPL-2.0"
 licenselink = "https://github.com/sudorook/capsule/blob/master/LICENSE"
 description = "A CSS-only theme for Hugo using Bulma and Font-Awesome"
 homepage = "https://github.com/sudorook/capsule"
-tags = ["hugo", "bulma", "css-only", "font-awesome"]
-features = []
+tags = [
+         "hugo",
+         "bulma",
+         "css only",
+         "font awesome",
+         "responsive"
+       ]
+features = [
+             "css only",
+             "no javascript",
+             "built-in pagination",
+             "display git metadata"
+             "automatic share links",
+             "Bulma classes as shortcodes",
+             "image/figure shortcodes",
+             "responsive layout",
+             "pygments syntax highlighting",
+             "sort posts by categories and tags"
+           ]
 min_version = 0.18
 
 [author]
   name = "sudorook"
-  homepage = ""
