@@ -2,7 +2,7 @@
 
 A CSS-only Hugo theme using the Bulma CSS framework and Font-Awesome icons.
 
-![Capsule Corp.](assets/capsule-corp.png)
+![Capsule Corp.](https://raw.githubusercontent.com/sudorook/capsule/master/assets/capsule-corp.png)
 
 # Install
 
