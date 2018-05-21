@@ -1,6 +1,8 @@
 # Capsule
 
-A CSS-only Hugo theme using the Bulma CSS framework and Font-Awesome icons.
+A CSS-only Hugo theme using the [Bulma CSS
+framework](https://github.com/jgthms/bulma) and [Font-Awesome
+icons](https://github.com/FortAwesome/Font-Awesome).
 
 ![Capsule Corp.](https://raw.githubusercontent.com/sudorook/capsule/master/assets/capsule-corp.png)
 
@@ -95,7 +97,7 @@ js = """
 """
 ```
 
-Any CSS or JS specified here will add to the site \<head\> when hugo renders
+Any CSS or JS specified here will add to the site \<head\> when Hugo renders
 the page.
 
 
