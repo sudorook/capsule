@@ -3,7 +3,8 @@
   <!-- Hero header: will stick at the top -->
   <div class="hero-head">
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar {{ if not (fileExists (print "/static" .Site.Data.defaults.icons.banner)) }}has-shadow{{ end }}"
+         role="navigation" aria-label="main navigation">
       <div class="container">
 
         <div class="navbar-brand">
