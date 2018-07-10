@@ -41,12 +41,12 @@
 
   </div>
 
+{{- if (fileExists (print "/static" .Site.Data.defaults.icons.banner)) }}
   <!-- Hero content: will be in the middle -->
   <div class="hero-body"
-       {{- if (fileExists (print "/static" .Site.Data.defaults.icons.banner)) }}
        style="background:url('{{ .Site.BaseURL }}/{{ $.Scratch.Get "prefix" }}{{ .Site.Data.defaults.icons.banner }}') center;
-              background-size: auto 100%;"
-       {{- end }}>
+              background-size: auto 100%;">
   </div>
+{{- end }}
 
 </section>
