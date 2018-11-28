@@ -4,22 +4,22 @@
     <div class="level-left">
       <div class="level-item">
         <p class="control has-addons">
-          {{- if .Prev }}
-          <a class="button" href="{{ .Prev.Permalink }}">
+          {{- if .NextPage }}
+          <a class="button" href="{{ .NextPage.Permalink }}">
             <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
             <span class="is-hidden-touch is-hidden-desktop-only">
-              {{ .Prev.Title | truncate 100 "..." }}
+              {{ .NextPage.Title | truncate 100 "..." }}
             </span>
             <span class="is-hidden-touch is-hidden-widescreen">
-              {{ .Prev.Title | truncate 75 "..." }}
+              {{ .NextPage.Title | truncate 75 "..." }}
             </span>
             <span class="is-hidden-mobile is-hidden-desktop">
-              {{ .Prev.Title | truncate 50 "..." }}
+              {{ .NextPage.Title | truncate 50 "..." }}
             </span>
             <span class="is-hidden-tablet">
-              {{ .Prev.Title | truncate 40 "..." }}
+              {{ .NextPage.Title | truncate 40 "..." }}
             </span>
-            <!-- <span>&nbsp;| {{ title .Prev.Section | pluralize }}</span> -->
+            <!-- <span>&nbsp;| {{ title .NextPage.Section | pluralize }}</span> -->
           </a>
           {{- else }}
           <a class="button" href="#" disabled>
@@ -34,21 +34,21 @@
     <div class="level-right">
       <div class="level-item">
         <p class="control has-addons">
-          {{- if .Next }}
-          <a class="button" href="{{ .Next.Permalink }}">
+          {{- if .PrevPage }}
+          <a class="button" href="{{ .PrevPage.Permalink }}">
             <span class="is-hidden-touch is-hidden-desktop-only">
-              {{ .Next.Title | truncate 100 "..." }}
+              {{ .PrevPage.Title | truncate 100 "..." }}
             </span>
             <span class="is-hidden-touch is-hidden-widescreen">
-              {{ .Next.Title | truncate 75 "..." }}
+              {{ .PrevPage.Title | truncate 75 "..." }}
             </span>
             <span class="is-hidden-mobile is-hidden-desktop">
-              {{ .Next.Title | truncate 50 "..." }}
+              {{ .PrevPage.Title | truncate 50 "..." }}
             </span>
             <span class="is-hidden-tablet">
-              {{ .Next.Title | truncate 40 "..." }}
+              {{ .PrevPage.Title | truncate 40 "..." }}
             </span>
-            <!-- <span>&nbsp;| {{ title .Next.Section | pluralize }}</span> -->
+            <!-- <span>&nbsp;| {{ title .PrevPage.Section | pluralize }}</span> -->
             <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
           </a>
           {{- else }}
