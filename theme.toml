@@ -22,7 +22,7 @@ features = [
              "pygments syntax highlighting",
              "sort posts by categories and tags"
            ]
-min_version = 0.18
+min_version = 0.52
 
 [author]
   name = "sudorook"
