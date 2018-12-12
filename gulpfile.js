@@ -60,11 +60,6 @@ const dest = {
  *  - sass: rebuild css from sass source files
  */
 
-// Rebuild css and fonts
-gulp.task('default', function() {
-  gulp.start(['sass', 'fonts']);
-});
-
 // Compile css from sass files
 gulp.task('sass', function() {
   return gulp.src([build.sass + 'capsule.sass'])
@@ -83,3 +78,6 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest(dest.fonts))
     .on('end', function() { util.log("Copied fonts."); });
 });
+
+// Rebuild css and fonts
+gulp.task('default', gulp.series(gulp.parallel('sass', 'fonts')));
