@@ -6,7 +6,7 @@
   "devDependencies": {
     "bulma": "^0.7.4",
     "font-awesome": "^4.7.0",
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-cssmin": "^0.2.0",
     "gulp-print": "^5.0.2",
     "gulp-rename": "^1.4.0",
