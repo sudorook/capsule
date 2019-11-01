@@ -16,14 +16,14 @@
 
       <div class="level-left has-text-centered">
         <div class="level-item">
-          <form class="control has-icon has-icon-right" method="get"
+          <form class="control has-icons has-icons-right" method="get"
                 action="{{ if .Site.Params.searchURL }}{{ .Site.Params.searchURL }}
                         {{- else }}https://duckduckgo.com
                         {{- end }}">
             <input class="input" type="text" name="q" maxlength="255"
                    placeholder="Search">
             <input class="input" type="hidden" name="sites" value="{{ .Site.BaseURL }}">
-            <span class="icon is-small"><i class="fa fa-search"></i></span>
+            <span class="icon is-small is-right"><i class="fa fa-search"></i></span>
           </form>
         </div>
       </div>
