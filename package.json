@@ -4,7 +4,7 @@
   "description": "\"A CSS-only theme for Hugo using Bulma and Font-Awesome\"",
   "dependencies": {},
   "devDependencies": {
-    "bulma": "^0.7.5",
+    "bulma": "^0.8.0",
     "font-awesome": "^4.7.0",
     "gulp": "^4.0.2",
     "gulp-cssmin": "^0.2.0",
