@@ -8,7 +8,7 @@ const cssmin = require('gulp-cssmin');
 const print = require('gulp-print').default;
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
-const util = require('gulp-util');
+const log = require('fancy-log');
 
 
 /*
@@ -76,7 +76,7 @@ gulp.task('fonts', function() {
   return gulp.src(src.fontawesome.fonts + '**/*')
       .pipe(gulp.dest(dest.fonts))
       .on('end', function() {
-        util.log('Copied fonts.');
+        log.info('Copied fonts.');
       });
 });
 
