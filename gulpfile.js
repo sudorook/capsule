@@ -4,7 +4,7 @@
 
 // Load npm packages
 const gulp = require('gulp');
-const cssmin = require('gulp-cssmin');
+const cssmin = require('gulp-clean-css');
 const print = require('gulp-print').default;
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
@@ -64,7 +64,7 @@ gulp.task('sass', function() {
   return gulp.src([build.sass + 'capsule.sass'])
       .pipe(sass())
       .pipe(print())
-      .pipe(cssmin())
+      .pipe(cssmin({compatibility: 'ie8'}))
       .pipe(rename(function(name) {
         name.extname = '.min.css';
       }))
