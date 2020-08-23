@@ -53,7 +53,7 @@
             {{- end }}
           {{- end }}
 
-          <a class="button" href="{{ .Site.RSSLink }}">
+          <a class="button" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}">
             <span class="icon"><i class="fa fa-rss"></i></span>
           </a>
 
