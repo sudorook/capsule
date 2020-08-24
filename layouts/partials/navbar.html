@@ -3,7 +3,7 @@
   <div class="container">
 
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href="/{{ .Lang }}">
         {{- if (fileExists (print "/static" .Site.Data.defaults.icons.brand)) }}
         <img alt="Brand" src="{{ .Site.Data.defaults.icons.brand }}">
         {{- end }}
