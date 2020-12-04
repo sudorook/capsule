@@ -1,14 +1,22 @@
-<nav class="pagination">
+<nav class="pagination" role="pagination" aria-label="pagination">
   {{- if .Paginator.HasPrev }}
-  <a href="{{ .Paginator.Prev.URL}}" class="pagination-previous">Previous</a>
+  <a href="{{ .Paginator.Prev.URL}}" class="pagination-previous">
+    <span class="icon is-small"><i class="fas fa-chevron-left"></i></span>
+  </a>
   {{- else }}
-  <a class="pagination-previous" disabled>Previous</a>
+  <a class="pagination-previous" disabled>
+    <span class="icon is-small"><i class="fas fa-chevron-left"></i></span>
+  </a>
   {{- end }}
 
   {{- if .Paginator.HasNext }}
-  <a href="{{ .Paginator.Next.URL}}" class="pagination-next">Next</a>
+  <a href="{{ .Paginator.Next.URL}}" class="pagination-next">
+    <span class="icon is-small"><i class="fas fa-chevron-right"></i></span>
+  </a>
   {{- else }}
-  <a class="pagination-next" disabled>Next</a>
+  <a class="pagination-next" disabled>
+    <span class="icon is-small"><i class="fas fa-chevron-right"></i></span>
+  </a>
   {{- end }}
 
   <ul class="pagination-list">
