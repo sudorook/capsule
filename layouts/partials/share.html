@@ -33,10 +33,10 @@
       </a>
 
       <!-- Google+ -->
-      <a class="button"
-         href="https://plus.google.com/share?url={{ .Permalink }}">
-        <span class="icon"><i class="fab fa-google-plus"></i></span>
-      </a>
+      <!-- <a class="button" -->
+      <!--    href="https://plus.google.com/share?url={{ .Permalink }}"> -->
+      <!--   <span class="icon"><i class="fab fa-google-plus"></i></span> -->
+      <!-- </a> -->
 
       <!-- Linkedin -->
       <a class="button"
@@ -63,9 +63,15 @@
       </a>
 
       <!-- Skype -->
+      <!-- <a class="button" -->
+      <!--    href="https://web.skype.com/share?url={{ .Permalink }}"> -->
+      <!--   <span class="icon"><i class="fab fa-skype"></i></span> -->
+      <!-- </a> -->
+
+      <!-- Telegram -->
       <a class="button"
-         href="https://web.skype.com/share?url={{ .Permalink }}">
-        <span class="icon"><i class="fab fa-skype"></i></span>
+         href="tg://msg_url?url={{ .Permalink }}">
+        <span class="icon"><i class="fab fa-telegram"></i></span>
       </a>
 
       <!-- Viber -->
@@ -75,10 +81,10 @@
       <!-- </a> -->
 
       <!-- Blogger -->
-      <!-- <a class="button" -->
-      <!--    href="https://www.blogger.com/blog-this.g?u={{ .Permalink }}&n={{ .Title }}&t={{ with .Params.description }}{{.}}{{ end }}"> -->
-      <!--   <span class="icon"><i class="fab fa-blogger"></i></span> -->
-      <!-- </a> -->
+      <a class="button"
+         href="https://www.blogger.com/blog-this.g?u={{ .Permalink }}&n={{ .Title }}&t={{ with .Params.description }}{{.}}{{ end }}">
+        <span class="icon"><i class="fab fa-blogger"></i></span>
+      </a>
     </span>
   </div>
 </div>
