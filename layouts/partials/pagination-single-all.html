@@ -6,7 +6,7 @@
         <p class="control has-addons">
           {{- if .NextPage }}
           <a class="button" href="{{ .NextPage.Permalink }}">
-            <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
+            <span class="icon is-small"><i class="fas fa-chevron-left"></i></span>
             <span class="is-hidden-touch is-hidden-desktop-only">
               {{ .NextPage.Title | truncate 100 "..." }}
             </span>
@@ -23,7 +23,7 @@
           </a>
           {{- else }}
           <a class="button" href="#" disabled>
-            <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
+            <span class="icon is-small"><i class="fas fa-chevron-left"></i></span>
             <span>Newest</span>
           </a>
           {{- end }}
@@ -49,12 +49,12 @@
               {{ .PrevPage.Title | truncate 40 "..." }}
             </span>
             <!-- <span>&nbsp;| {{ title .PrevPage.Section | pluralize }}</span> -->
-            <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+            <span class="icon is-small"><i class="fas fa-chevron-right"></i></span>
           </a>
           {{- else }}
           <a class="button" href="#" disabled>
             <span>Oldest</span>
-            <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+            <span class="icon is-small"><i class="fas fa-chevron-right"></i></span>
           </a>
           {{- end }}
         </p>

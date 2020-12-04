@@ -23,7 +23,7 @@
             <input class="input" type="text" name="q" maxlength="255"
                    placeholder="Search">
             <input class="input" type="hidden" name="sites" value="{{ .Site.BaseURL }}">
-            <span class="icon is-small is-right"><i class="fa fa-search"></i></span>
+            <span class="icon is-small is-right"><i class="fas fa-search"></i></span>
           </form>
         </div>
       </div>
@@ -32,7 +32,7 @@
         <div class="level-item">
 
           <a class="button" href="{{ .Site.BaseURL }}{{ .Lang }}">
-            <span class="icon"><i class="fa fa-home"></i></span>
+            <span class="icon"><i class="fas fa-home"></i></span>
           </a> &nbsp;
 
           <!-- Most sites have the template https://<site>.com/<user>, so just
@@ -42,19 +42,19 @@
             {{- if eq $key "hacker-news" }}
           <a class="button"
              href="https://news.ycombinator.com/user?id={{ $value }}">
-            <span class="icon"><i class="fa fa-{{ $key }}"></i></span>
+            <span class="icon"><i class="fab fa-{{ $key }}"></i></span>
           </a> &nbsp;
 
             {{- else }}
           <a class="button" href="https://{{ $key }}.com/{{ $value }}">
-            <span class="icon"><i class="fa fa-{{ $key }}"></i></span>
+            <span class="icon"><i class="fab fa-{{ $key }}"></i></span>
           </a> &nbsp;
 
             {{- end }}
           {{- end }}
 
           <a class="button" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}">
-            <span class="icon"><i class="fa fa-rss"></i></span>
+            <span class="icon"><i class="fas fa-rss"></i></span>
           </a>
 
         </div>

@@ -32,7 +32,7 @@
     {{- if lt ($.Scratch.Get "count") ($.Scratch.Get "max_show") }}
       {{- $.Scratch.Add "count" 1 }}
     <a class="panel-block" href="{{ $page.Permalink }}">
-      <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+      <span class="icon is-small"><i class="fas fa-chevron-right"></i></span>
       <span>&nbsp;</span>
       <span>{{ $page.Title }}&nbsp;
       {{- range $tag := (intersect $this_tags .Params.tags) }}

@@ -26,9 +26,9 @@ const src = {
     sass: './node_modules/bulma/sass/',
   },
   fontawesome: {
-    fonts: './node_modules/font-awesome/fonts/',
-    css: './node_modules/font-awesome/css/',
-    sass: './node_modules/font-awesome/scss/',
+    fonts: './node_modules/@fortawesome/fontawesome-free/webfonts/',
+    css: './node_modules/@fortawesome/fontawesome-free/css/',
+    sass: './node_modules/@fortawesome/fontawesome-free/scss/',
   },
 };
 

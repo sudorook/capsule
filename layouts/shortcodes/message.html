@@ -10,13 +10,13 @@
     {{ . }}
     <span class="icon is-small">
     {{- if eq ($.Scratch.Get "class") "is-danger" }}
-      <i class="fa fa-exclamation-circle"></i>
+      <i class="fas fa-minus-circle"></i>
     {{- else if eq ($.Scratch.Get "class") "is-warning" }}
-      <i class="fa fa-warning"></i>
+      <i class="fas fa-exclamation-triangle"></i>
     {{- else if eq ($.Scratch.Get "class") "is-info" }}
-      <i class="fa fa-info-circle"></i>
+      <i class="fas fa-info"></i>
     {{- else if eq ($.Scratch.Get "class") "is-success" }}
-      <i class="fa fa-check-square"></i>
+      <i class="fas fa-check"></i>
     {{- end }}
     </span>
   </div>

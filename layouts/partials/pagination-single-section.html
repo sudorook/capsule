@@ -6,7 +6,7 @@
         <p class="control has-addons">
           {{- if .NextInSection }}
           <a class="button" href="{{ .NextInSection.Permalink }}">
-            <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
+            <span class="icon is-small"><i class="fas fa-chevron-left"></i></span>
             <span class="is-hidden-touch is-hidden-desktop-only">
               {{ .NextInSection.Title | truncate 100 "..." }}
             </span>
@@ -23,7 +23,7 @@
           </a>
           {{- else }}
           <a class="button" href="#" disabled>
-            <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
+            <span class="icon is-small"><i class="fas fa-chevron-left"></i></span>
             <span>Newest</span>
             <!-- <span>&nbsp;| {{ title .Section | pluralize }}</span> -->
           </a>
@@ -50,13 +50,13 @@
               {{ .PrevInSection.Title | truncate 40 "..." }}
             </span>
             <!-- <span>&nbsp;| {{ title .Section | pluralize }}</span> -->
-            <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+            <span class="icon is-small"><i class="fas fa-chevron-right"></i></span>
           </a>
           {{- else }}
           <a class="button" href="#" disabled>
             <span>Oldest</span>
             <!-- <span>&nbsp;| {{ title .Section | pluralize }}</span> -->
-            <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
+            <span class="icon is-small"><i class="fas fa-chevron-right"></i></span>
           </a>
           {{- end }}
         </p>
