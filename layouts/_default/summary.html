@@ -1,13 +1,15 @@
 <article class="media">
   <div class="media-content">
 
-    <p class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-    <p class="subtitle is-flex" style="justify-content:space-between">
-      <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+    <p class="title is-4"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+    <p class="subtitle is-6 mb-2">
+      <span class="icon is-small"><i class="far fa-calendar-alt"></i></span>
+      <span class="mr-2">{{ .Date.Format "Jan 2, 2006" }}</span>
+      <span class="icon is-small"><i class="far fa-clock"></i></span>
       <span>{{ .ReadingTime }} min.</span>
     </p>
 
-    <p>{{ .Summary }}</p>
+    <div class="content">{{ .Summary }}</div>
 
   </div>
 </article>
