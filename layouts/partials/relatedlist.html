@@ -27,7 +27,7 @@
       {{- $.Scratch.Add "page_count" 1 }}
 <div class="container">
   <nav class="panel">
-    <p class="panel-heading">Related</p>
+    <p class="panel-heading">{{- i18n "related" -}}</p>
     {{- end }}
     {{- if lt ($.Scratch.Get "count") ($.Scratch.Get "max_show") }}
       {{- $.Scratch.Add "count" 1 }}

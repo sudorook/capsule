@@ -15,7 +15,7 @@
 {{- range $name, $taxonomy := .Site.Taxonomies }}
   {{- range $key, $value := $.Params }}
   {{- if eq $key $name }}
-<div class="heading">{{ $name | humanize | title }}:</div>
+<div class="heading">{{- i18n $name }}:</div>
 <div class="field is-grouped is-grouped-multiline">
   {{- range $item := $value }}
   <div class="control">

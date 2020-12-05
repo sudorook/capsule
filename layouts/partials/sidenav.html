@@ -1,7 +1,7 @@
 <aside class="menu">
   {{- range $name, $taxonomy := .Site.Taxonomies }}
   {{- if not (eq (len $taxonomy) 0) }}
-  <p class="menu-label">{{ $name | title }}</p>
+  <p class="menu-label">{{- i18n $name }}:</p>
   <ul class="menu-list">
     {{- range $key, $value := $taxonomy }}
     <li>
