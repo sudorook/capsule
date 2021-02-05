@@ -22,7 +22,8 @@
                         {{- end }}">
             <input class="input" type="text" name="q" maxlength="255"
                    placeholder="{{- i18n "search" }}">
-            <input class="input" type="hidden" name="sites" value="{{ .Site.BaseURL }}">
+            <input class="input" type="hidden" name="sites"
+                   value="{{ .Site.BaseURL }}">
             <span class="icon is-small is-right"><i class="fas fa-search"></i></span>
           </form>
         </div>
@@ -53,7 +54,8 @@
             {{- end }}
           {{- end }}
 
-          <a class="button" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}">
+          <a class="button"
+             href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink | relLangURL }}{{ end }}">
             <span class="icon"><i class="fas fa-rss"></i></span>
           </a>
 
