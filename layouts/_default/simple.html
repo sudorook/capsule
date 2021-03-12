@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Language }}" dir="ltr" itemscope itemtype="http://schema.org/Article">
+
+  {{ partial "head.html" . }}
+
+  <body style="min-height:100vh;display:flex;flex-direction:column">
+
+    {{ partial "navbar.html" . }}
+
+    <section class="section" style="flex:1">
+
+      <!-- Content -->
+      <div class="container">
+        <h1 class="title">{{ .Title }}</h1>
+        
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+
+    </section>
+
+    {{ partial "footer.html" . }}
+  </body>
+
+</html>
