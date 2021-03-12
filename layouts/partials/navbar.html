@@ -33,7 +33,9 @@
          class="navbar-item
                 {{ if or ($node.IsMenuCurrent "main" .) ($node.HasMenuCurrent "main" .) -}}
                   is-active
-                {{- end }}">{{ .Name }}
+                  {{- end }}">{{- if .Pre }}{{ .Pre }}{{ end -}}
+                              {{ .Name }}
+                              {{- if .Post }}{{ .Post }}{{ end -}}
       </a>
       {{- end }}
       </div>
