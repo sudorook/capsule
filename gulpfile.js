@@ -54,9 +54,9 @@ const dest = {
 
 /*
  * Define gulp tasks:
- *  - default: rebuild css and fonts
+ *  - default: rebuild CSS and fonts
  *  - fonts: rebuild fonts
- *  - sass: rebuild css from sass source files
+ *  - sass: rebuild CSS from Sass source files
  */
 
 // Compile css from sass files
@@ -80,5 +80,5 @@ gulp.task('fonts', function() {
       });
 });
 
-// Rebuild css and fonts
+// Rebuild CSS and fonts
 gulp.task('default', gulp.series(gulp.parallel('sass', 'fonts')));
