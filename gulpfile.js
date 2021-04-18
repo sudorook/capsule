@@ -7,7 +7,7 @@ const gulp = require('gulp');
 const cssmin = require('gulp-clean-css');
 const print = require('gulp-print').default;
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const { sass } = require('@mr-hope/gulp-sass');
 const log = require('fancy-log');
 
 
@@ -62,7 +62,7 @@ const dest = {
 // Compile css from sass files
 gulp.task('sass', function() {
   return gulp.src([build.sass + 'capsule.sass'])
-      .pipe(sass())
+      .pipe(sass().on("error", sass.logError))
       .pipe(print())
       .pipe(cssmin({compatibility: 'ie8'}))
       .pipe(rename(function(name) {
