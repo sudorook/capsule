@@ -3,7 +3,7 @@
   "version": "0.5.4",
   "description": "\"A CSS-only theme for Hugo using Bulma and Font-Awesome\"",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.0.0",
     "@mr-hope/gulp-sass": "^3.0.2",
     "bulma": "^0.9.3",
     "fancy-log": "^2.0.0",
@@ -11,7 +11,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-print": "^5.0.2",
     "gulp-rename": "^2.0.0",
-    "sass": "^1.49.0"
+    "sass": "^1.49.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
