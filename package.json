@@ -1,20 +1,18 @@
 {
   "name": "capsule",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "\"A CSS-only theme for Hugo using Bulma and Font-Awesome\"",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.0.0",
-    "@mr-hope/gulp-sass": "^3.0.2",
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "bulma": "^0.9.3",
-    "fancy-log": "^2.0.0",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-print": "^5.0.2",
-    "gulp-rename": "^2.0.0",
-    "sass": "^1.49.9"
+    "copyfiles": "^2.4.1",
+    "sass": "^1.51.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass build/sass/capsule.sass:static/css/capsule.min.css --no-source-map --style=compressed --color --no-quiet --verbose",
+    "font": "copyfiles node_modules/@fortawesome/fontawesome-free/webfonts/* static/fonts -u 4",
+    "build": "npm run sass && npm run font"
   },
   "repository": {
     "type": "git",
