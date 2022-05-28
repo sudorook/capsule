@@ -4,9 +4,9 @@
   "description": "\"A CSS-only theme for Hugo using Bulma and Font-Awesome\"",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
-    "bulma": "^0.9.3",
+    "bulma": "^0.9.4",
     "copyfiles": "^2.4.1",
-    "sass": "^1.51.0"
+    "sass": "^1.52.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
