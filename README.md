@@ -34,7 +34,7 @@ pygmentsstyle = "<style>"
 
 For dark highlighter themes, you should rebuild capsule CSS with
 `build/extra/syntax.sass`. Uncomment it from the capsule.sass file and run
-`gulp`.
+`npm run build`.
 
 Without that file, the background color will default to Bulma's light
 background-color, and light colored elements meant to be displayed against dark
@@ -114,20 +114,21 @@ markdown. The nesting levels for each match the header weight (h1, h2, etc.).
 
 # Build
 
-To (re)build the CSS, you need to have npm and gulp installed. Clone the
+To (re)build the CSS, you need to have npm and installed. Clone the
 capsule repository and once in it run:
 
-```
+```bash
 npm install
 ```
 
-and then
+and then build by:
 
-```
-gulp
+```bash
+npm run build
 ```
 
-You can enable/disable sass components in /build/sass/capsule.sass. To use
-customized versions of capsule, you can maintain a fork repo and set the theme
-submodule to your fork, or you can simply make a symlink in the themes/ folder
-of your site to your local repo.
+You can enable/disable sass components by editing build/sass/capsule.sass
+before building. To use your own customized version of capsule, a) fork this
+repository and set the Git submodule to use it, or b) make a symlink to your
+custom build in the Hugo themes/ directory, assuming your build system allows
+this.
