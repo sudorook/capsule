@@ -1,6 +1,6 @@
 {
   "name": "capsule",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "\"A CSS-only theme for Hugo using Bulma and Font-Awesome\"",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
