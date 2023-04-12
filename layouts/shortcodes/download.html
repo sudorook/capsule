@@ -1,0 +1,9 @@
+{{- with .Get "url" }}
+{{- $.Scratch.Set "url" . }}
+{{- else }}
+{{- $.Scratch.Set "url" "#" }}
+{{- end }}
+
+<a class="button is-link" href="{{- $.Scratch.Get "url" -}}" download>
+  {{- .Inner -}}
+</a>
