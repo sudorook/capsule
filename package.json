@@ -4,13 +4,13 @@
   "description": "\"A CSS-only theme for Hugo using Bulma and Font-Awesome\"",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
-    "bulma": "^0.9.4",
+    "bulma": "^1.0.0",
     "copyfiles": "^2.4.1",
     "sass": "^1.72.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass build/sass/capsule.sass:static/css/capsule.min.css --no-source-map --style=compressed --color --no-quiet --verbose",
+    "sass": "sass build/sass/capsule.scss:static/css/capsule.min.css --no-source-map --style=compressed --color --no-quiet --verbose",
     "font": "copyfiles node_modules/@fortawesome/fontawesome-free/webfonts/* static/fonts -u 4",
     "build": "npm run sass && npm run font"
   },

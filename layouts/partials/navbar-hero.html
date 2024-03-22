@@ -3,7 +3,7 @@
   <!-- Hero header: will stick at the top -->
   <div class="hero-head">
 
-    <nav class="navbar {{ if not (fileExists (print "/static" .Site.Data.defaults.icons.banner)) }}has-shadow{{ end }}"
+    <nav class="navbar is-dark {{ if not (fileExists (print "/static" .Site.Data.defaults.icons.banner)) }}has-shadow{{ end }}"
          role="navigation" aria-label="main navigation">
       <div class="container">
 
@@ -17,6 +17,7 @@
                  aria-label="menu" aria-expanded="false"
                  for="navbar-burger-state">
                  <!-- ^^^^^^^^^^^^^^^^^^^ -->
+            <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
