@@ -1,13 +1,9 @@
 {{ if (.Site.Params.share) -}}
 <div class="container">
   <div class="is-flex">
-    <span>
+    <div class="buttons">
       <a class="button">{{- i18n "share" -}}</a>
-    </span>
 
-    &nbsp;
-
-    <span>
       <!-- Facebook -->
       <a class="button"
          href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}">
@@ -31,12 +27,6 @@
          href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
         <span class="icon"><i class="fab fa-reddit"></i></span>
       </a>
-
-      <!-- Google+ -->
-      <!-- <a class="button" -->
-      <!--    href="https://plus.google.com/share?url={{ .Permalink }}"> -->
-      <!--   <span class="icon"><i class="fab fa-google-plus"></i></span> -->
-      <!-- </a> -->
 
       <!-- Linkedin -->
       <a class="button"
@@ -85,7 +75,7 @@
          href="https://www.blogger.com/blog-this.g?u={{ .Permalink }}&n={{ .Title }}&t={{ with .Params.description }}{{.}}{{ end }}">
         <span class="icon"><i class="fab fa-blogger"></i></span>
       </a>
-    </span>
+    </div>
   </div>
 </div>
 {{ end -}}

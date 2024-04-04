@@ -30,11 +30,11 @@
       </div>
 
       <div class="level-right has-text-centered">
-        <div class="level-item">
+        <div class="level-item buttons">
 
           <a class="button" href="{{ "/" | relLangURL }}">
             <span class="icon"><i class="fas fa-home"></i></span>
-          </a> &nbsp;
+          </a>
 
           <!-- Most sites have the template https://<site>.com/<user>, so just
                use that instead of hardcoding everything. Sites that don't
@@ -44,12 +44,12 @@
           <a class="button"
              href="https://news.ycombinator.com/user?id={{ $value }}">
             <span class="icon"><i class="fab fa-{{ $key }}"></i></span>
-          </a> &nbsp;
+          </a>
 
             {{- else }}
           <a class="button" href="https://{{ $key }}.com/{{ $value }}">
             <span class="icon"><i class="fab fa-{{ $key }}"></i></span>
-          </a> &nbsp;
+          </a>
 
             {{- end }}
           {{- end }}
