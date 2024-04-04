@@ -4,8 +4,6 @@ A CSS-only Hugo theme using the
 [Bulma CSS framework](https://github.com/jgthms/bulma) and
 [Font-Awesome icons](https://github.com/FortAwesome/Font-Awesome).
 
-![Capsule Corp.](https://raw.githubusercontent.com/sudorook/capsule/master/assets/capsule-corp.png)
-
 # Install
 
 From the base of your website, run:
@@ -126,3 +124,5 @@ You can enable/disable sass components by editing build/sass/capsule.sass before
 building. To use your own customized version of capsule, a) fork this repository
 and set the Git submodule to use it, or b) make a symlink to your custom build
 in the Hugo themes/ directory, assuming your build system allows this.
+
+![Capsule Corp.](https://raw.githubusercontent.com/sudorook/capsule/master/assets/capsule-corp.png)
