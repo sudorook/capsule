@@ -36,19 +36,34 @@
             <span class="icon"><i class="fas fa-home"></i></span>
           </a>
 
+          <a class="button" href="mailto:{{ .Site.Params.Author.email }}">
+            <span class="icon"><i class="fa fa-envelope"></i></span>
+          </a>
+
           <!-- Most sites have the template https://<site>.com/<user>, so just
                use that instead of hardcoding everything. Sites that don't
                follow the template will need hard-coding, though... -->
-          {{- range $key, $value := .Site.Social }}
+          {{- range $key, $value := .Site.Params.Social }}
             {{- if eq $key "hacker-news" }}
           <a class="button"
              href="https://news.ycombinator.com/user?id={{ $value }}">
-            <span class="icon"><i class="fab fa-{{ $key }}"></i></span>
+            <span class="icon"><i class="fa-brands fa-{{ $key }}"></i></span>
+          </a>
+
+            {{- else if eq $key "codeberg" }}
+          <a class="button" href="https://{{ $key }}.org/{{ $value }}">
+            <span class="icon"><i class="fa fa-code"></i></span>
+          </a>
+
+            {{- else if eq $key "reddit" }}
+          <a class="button"
+             href="https://reddit.com/user/{{ $value }}">
+            <span class="icon"><i class="fa-brands fa-{{ $key }}"></i></span>
           </a>
 
             {{- else }}
           <a class="button" href="https://{{ $key }}.com/{{ $value }}">
-            <span class="icon"><i class="fab fa-{{ $key }}"></i></span>
+            <span class="icon"><i class="fa-brands fa-{{ $key }}"></i></span>
           </a>
 
             {{- end }}

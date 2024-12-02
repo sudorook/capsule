@@ -83,7 +83,7 @@
         content="{{ .GitInfo.AuthorDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}"/>
     {{- end }}
   {{- end }}
-  {{- with .Site.Social.facebook }}
+  {{- with .Site.Params.Social.facebook }}
   <meta property="article:author" content="https://www.facebook.com/{{.}}"/>
   <meta property="article:publisher" content="https://www.facebook.com/{{.}}"/>
   {{- end }}
@@ -96,14 +96,14 @@
   <!-- twitter:card can also be summary_large_image -->
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:site"
-        content="{{ with .Site.Social.twitter }}@{{.}}{{ end }}"/>
+        content="{{ with .Site.Params.Social.twitter }}@{{.}}{{ end }}"/>
   <meta name="twitter:title" content="{{ .Title }}"/>
   <meta name="twitter:description"
         content="{{ with .Description }}{{ . -}}
                  {{ else }}{{ .Content | safeHTML | truncate 200 "..." -}}
                  {{ end }}"/>
   <meta name="twitter:creator"
-        content="{{ with .Site.Social.twitter }}@{{.}}{{ end }}"/>
+        content="{{ with .Site.Params.Social.twitter }}@{{.}}{{ end }}"/>
   <meta name="twitter:image:src"
         content="{{ with .Params.image }}{{. -}}
                  {{ else -}}

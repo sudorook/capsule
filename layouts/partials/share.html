@@ -7,73 +7,79 @@
       <!-- Facebook -->
       <a class="button"
          href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}">
-        <span class="icon"><i class="fab fa-facebook"></i></span>
+        <span class="icon"><i class="fa-brands fa-facebook"></i></span>
       </a>
 
       <!-- Twitter -->
       <a class="button"
-         href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}{{ with .Site.Social.twitter}}&via=@{{.}}{{ end }}">
-        <span class="icon"><i class="fab fa-twitter"></i></span>
+         href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}{{ with .Site.Params.Social.twitter}}&via=@{{.}}{{ end }}">
+        <span class="icon"><i class="fa-brands fa-twitter"></i></span>
       </a>
 
       <!-- Hacker News -->
       <a class="button"
          href="https://news.ycombinator.com/submitlink?u={{ .Permalink }}">
-        <span class="icon"><i class="fab fa-hacker-news"></i></span>
+        <span class="icon"><i class="fa-brands fa-hacker-news"></i></span>
       </a>
 
       <!-- Reddit -->
       <a class="button"
          href="https://reddit.com/submit?url={{ .Permalink }}&title={{ .Title }}">
-        <span class="icon"><i class="fab fa-reddit"></i></span>
+        <span class="icon"><i class="fa-brands fa-reddit"></i></span>
       </a>
 
       <!-- Linkedin -->
       <a class="button"
          href="https://www.linkedin.com/shareArticle?url={{ .Permalink }}&title={{ .Title }}">
-        <span class="icon"><i class="fab fa-linkedin"></i></span>
+        <span class="icon"><i class="fa-brands fa-linkedin"></i></span>
       </a>
 
       <!-- Tumblr -->
       <a class="button"
-         href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ .Permalink }}&title={{ .Title }}&caption={{ with .Params.description }}{{.}}{{ end }}">
-        <span class="icon"><i class="fab fa-tumblr"></i></span>
+         href="https://www.tumblr.com/share/link?url={{ .Permalink }}&name={{ .Title }}&description={{ with .Params.description }}{{.}}{{ end }}">
+        <span class="icon"><i class="fa-brands fa-tumblr"></i></span>
       </a>
 
       <!-- Pinterest -->
       <a class="button"
          href="https://pinterest.com/pin/create/bookmarklet/?media={{ with .Params.image }}{{.}}{{ else }}{{ if (fileExists (print "/static" .Site.Data.defaults.icons.logo)) }}{{ .Site.Data.defaults.icons.logo }}{{ end }}{{ end }}&url={{ .Permalink }}&description={{ .Title }}">
-        <span class="icon"><i class="fab fa-pinterest"></i></span>
+        <span class="icon"><i class="fa-brands fa-pinterest"></i></span>
       </a>
 
       <!-- Whatsapp -->
       <a class="button"
          href="whatsapp://send?text={{ .Permalink }}">
-        <span class="icon"><i class="fab fa-whatsapp"></i></span>
+        <span class="icon"><i class="fa-brands fa-whatsapp"></i></span>
+      </a>
+
+      <!-- Wordpress -->
+      <a class="button"
+         href="https://wordpress.com/press-this.php?u={{ .Permalink }}&t={{ .Title }}{{ with .Params.description }}&s={{.}}{{ end }}">
+        <span class="icon"><i class="fa-brands fa-wordpress"></i></span>
       </a>
 
       <!-- Skype -->
       <!-- <a class="button" -->
       <!--    href="https://web.skype.com/share?url={{ .Permalink }}"> -->
-      <!--   <span class="icon"><i class="fab fa-skype"></i></span> -->
+      <!--   <span class="icon"><i class="fa-brands fa-skype"></i></span> -->
       <!-- </a> -->
 
       <!-- Telegram -->
       <a class="button"
          href="tg://msg_url?url={{ .Permalink }}">
-        <span class="icon"><i class="fab fa-telegram"></i></span>
+        <span class="icon"><i class="fa-brands fa-telegram"></i></span>
       </a>
 
       <!-- Viber -->
       <!-- <a class="button" -->
       <!--    href="viber://forward?text={{ .Permalink }}"> -->
-      <!--   <span class="icon"><i class="fab fa-viber"></i></span> -->
+      <!--   <span class="icon"><i class="fa-brands fa-viber"></i></span> -->
       <!-- </a> -->
 
       <!-- Blogger -->
       <a class="button"
          href="https://www.blogger.com/blog-this.g?u={{ .Permalink }}&n={{ .Title }}&t={{ with .Params.description }}{{.}}{{ end }}">
-        <span class="icon"><i class="fab fa-blogger"></i></span>
+        <span class="icon"><i class="fa-brands fa-blogger"></i></span>
       </a>
     </div>
   </div>
