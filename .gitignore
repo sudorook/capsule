@@ -315,6 +315,8 @@ StyleCopReport.xml
 *.pgc
 *.pgd
 *.rsp
+# but not Directory.Build.rsp, as it configures directory-level build defaults
+!Directory.Build.rsp
 *.sbr
 *.tlb
 *.tli
@@ -775,6 +777,12 @@ dist
 # vuepress v2.x temp and cache directory
 .temp
 .cache
+
+# vitepress build output
+**/.vitepress/dist
+
+# vitepress cache directory
+**/.vitepress/cache
 
 # Docusaurus cache and generated files
 .docusaurus
