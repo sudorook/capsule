@@ -6,7 +6,7 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "bulma": "^1.0.4",
     "copyfiles": "^2.4.1",
-    "sass": "^1.89.0"
+    "sass": "^1.89.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
