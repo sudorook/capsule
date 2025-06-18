@@ -111,6 +111,9 @@ flycheck_*.el
 # network security
 /network-security.data
 
+# undo-tree
+*.~undo-tree~
+
 #
 # FROM: https://raw.githubusercontent.com/sudorook/gitignore/tweak/Global/Linux.gitignore
 #
@@ -210,7 +213,8 @@ GitHub.sublime-settings
 
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+# comment out the next line if you don't need vector files
+!*.svg
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -262,11 +266,16 @@ x86/
 [Aa][Rr][Mm]64/
 [Aa][Rr][Mm]64[Ee][Cc]/
 bld/
-[Bb]in/
 [Oo]bj/
 [Oo]ut/
 [Ll]og/
 [Ll]ogs/
+
+# Build results on 'Bin' directories
+**/[Bb]in/*
+# Uncomment if you have tasks that rely on *.refresh files to move binaries
+# (https://github.com/github/gitignore/pull/3736)
+#!**/[Bb]in/*.refresh
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -279,11 +288,15 @@ Generated\ Files/
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
+*.trx
 
 # NUnit
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Approval Tests result files
+*.received.*
 
 # Build Results of an ATL Project
 [Dd]ebugPS/
@@ -554,22 +567,22 @@ node_modules/
 _Pvt_Extensions
 
 # Paket dependency manager
-.paket/paket.exe
+**/.paket/paket.exe
 paket-files/
 
 # FAKE - F# Make
-.fake/
+**/.fake/
 
 # CodeRush personal settings
-.cr/personal
+**/.cr/personal
 
 # Python Tools for Visual Studio (PTVS)
-__pycache__/
+**/__pycache__/
 *.pyc
 
 # Cake - Uncomment if you are using it
-# tools/**
-# !tools/packages.config
+#tools/**
+#!tools/packages.config
 
 # Tabs Studio
 *.tss
@@ -591,6 +604,7 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+MSBuild_Logs/
 
 # AWS SAM Build and Temporary Artifacts folder
 .aws-sam
@@ -599,10 +613,10 @@ ASALocalRun/
 *.nvuser
 
 # MFractors (Xamarin productivity tool) working folder
-.mfractor/
+**/.mfractor/
 
 # Local History for Visual Studio
-.localhistory/
+**/.localhistory/
 
 # Visual Studio History (VSHistory) files
 .vshistory/
@@ -614,7 +628,7 @@ healthchecksdb
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
-.ionide/
+**/.ionide/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
@@ -625,10 +639,13 @@ FodyWeavers.xsd
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.code-workspace
+!.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
+
+# Built Visual Studio Code Extensions
+*.vsix
 
 # Windows Installer files from build outputs
 *.cab
@@ -636,9 +653,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
-
-# JetBrains Rider
-*.sln.iml
 
 #
 # FROM: https://raw.githubusercontent.com/sudorook/gitignore/tweak/Global/Windows.gitignore
@@ -687,7 +701,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-.pnpm-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -739,12 +752,6 @@ web_modules/
 # Optional stylelint cache
 .stylelintcache
 
-# Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
 # Optional REPL history
 .node_repl_history
 
@@ -756,10 +763,8 @@ web_modules/
 
 # dotenv environment variable files
 .env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+.env.*
+!.env.example
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
