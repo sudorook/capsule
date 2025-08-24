@@ -96,14 +96,14 @@
   <!-- twitter:card can also be summary_large_image -->
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:site"
-        content="{{ with .Site.Params.Social.twitter }}@{{.}}{{ end }}"/>
+        content="{{ with .Site.Params.Social.x }}@{{.}}{{ end }}"/>
   <meta name="twitter:title" content="{{ .Title }}"/>
   <meta name="twitter:description"
         content="{{ with .Description }}{{ . -}}
                  {{ else }}{{ .Content | safeHTML | truncate 200 "..." -}}
                  {{ end }}"/>
   <meta name="twitter:creator"
-        content="{{ with .Site.Params.Social.twitter }}@{{.}}{{ end }}"/>
+        content="{{ with .Site.Params.Social.x }}@{{.}}{{ end }}"/>
   <meta name="twitter:image:src"
         content="{{ with .Params.image }}{{. -}}
                  {{ else -}}
