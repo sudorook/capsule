@@ -843,9 +843,10 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
-# Vite logs files
+# Vite files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+.vite/
 
 #
 # FROM: https://raw.githubusercontent.com/sudorook/gitignore/tweak/Sass.gitignore
