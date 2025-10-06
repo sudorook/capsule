@@ -1,23 +1,26 @@
 /*!
- * Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- * Copyright 2024 Fonticons, Inc.
+ * Copyright 2025 Fonticons, Inc.
  */
 // Font Awesome core compile (Web Fonts-based)
 // -------------------------
 
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/functions';
-@import 'variables';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/mixins';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/core';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/sizing';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/fixed-width';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/list';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/bordered-pulled';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/animated';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/rotated-flipped';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/stacked';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/icons';
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/screen-reader';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/functions';
+@use 'variables';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/mixins';
 
-@import '../../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/core';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/sizing';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/widths';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/list';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/bordered';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/pulled';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/animated';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/rotated-flipped';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/stacked';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/icons';
+
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss';
+@use '../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';

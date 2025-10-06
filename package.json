@@ -3,10 +3,10 @@
   "version": "0.8.1",
   "description": "\"A CSS-only theme for Hugo using Bulma and Font-Awesome\"",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "bulma": "^1.0.4",
     "copyfiles": "^2.4.1",
-    "sass": "^1.89.2"
+    "sass": "^1.93.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
