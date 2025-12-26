@@ -4,7 +4,7 @@ A CSS-only Hugo theme using the
 [Bulma CSS framework](https://github.com/jgthms/bulma) and
 [Font-Awesome icons](https://github.com/FortAwesome/Font-Awesome).
 
-# Install
+## Install
 
 From the base of your website, run:
 
@@ -18,7 +18,7 @@ flag, or you can add `theme = "capsule"` to your config.toml file.
 **Note: Any additional documentation will be added to the
 [Capsule Demo](https://sudorook.gitlab.io/capsule-demo) site, not here.**
 
-## Notes:
+## Notes
 
 ### 1. Syntax highlighting (via pygments)
 
@@ -105,7 +105,7 @@ toc = true
 The table of contents will contain all the header items defined in the markdown.
 The nesting levels for each match the header weight (h1, h2, etc.).
 
-# Build
+## Build
 
 To (re)build the CSS, you need to have npm and installed. Clone the capsule
 repository and once in it run:
