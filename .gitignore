@@ -141,6 +141,7 @@ nohup.out
 
 # General
 .DS_Store
+.localized
 __MACOSX/
 .AppleDouble
 .LSOverride
